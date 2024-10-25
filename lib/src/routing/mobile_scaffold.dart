@@ -26,11 +26,11 @@ class MobileScaffold extends StatelessWidget {
         selectedFontSize: 12,
         type: NavigationBarType.fixed,
         currentIndex: navigationShell.currentIndex,
-        selectedItemColor: AppColors.tertiary,
+        selectedItemColor: context.colorScheme.onSurface,
         unselectedItemColor: AppColors.secondary,
         selectedLabelStyle: style,
         unselectedLabelStyle: style,
-        backgroundColor: AppColors.white,
+        backgroundColor: context.colorScheme.surface,
         shape: const Border(
           top: BorderSide(color: AppColors.secondary, width: 0.3),
         ),

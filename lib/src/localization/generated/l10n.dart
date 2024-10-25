@@ -100,6 +100,16 @@ class S {
     );
   }
 
+  /// `Dark Mode`
+  String get darkMode {
+    return Intl.message(
+      'Dark Mode',
+      name: 'darkMode',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Information`
   String get information {
     return Intl.message(
@@ -115,6 +125,16 @@ class S {
     return Intl.message(
       'Search Country',
       name: 'searchCountry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sync with device theme`
+  String get syncWithDeviceTheme {
+    return Intl.message(
+      'Sync with device theme',
+      name: 'syncWithDeviceTheme',
       desc: '',
       args: [],
     );

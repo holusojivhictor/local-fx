@@ -1,15 +1,20 @@
-import 'package:flutter/widgets.dart';
-import 'package:local_fx/src/localization/generated/l10n.dart';
-
 enum AppThemeType {
   light,
   dark;
 
-  String translate(BuildContext context) {
-    final s = S.of(context);
-    return switch (this) {
-      AppThemeType.light => s.light,
-      AppThemeType.dark => s.dark,
+  bool get darkMode {
+    switch (this) {
+      case AppThemeType.light:
+        return false;
+      case AppThemeType.dark:
+        return true;
+    }
+  }
+
+  static AppThemeType translate({required bool value}) {
+    return switch (value) {
+      false => AppThemeType.light,
+      true => AppThemeType.dark,
     };
   }
 }
