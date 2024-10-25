@@ -4,6 +4,8 @@ import 'package:local_fx/src/config/injection.dart';
 import 'package:local_fx/src/features/app_widget.dart';
 import 'package:local_fx/src/features/common/application/app/app_bloc.dart';
 import 'package:local_fx/src/features/common/infrastructure/infrastructure.dart';
+import 'package:local_fx/src/features/home/application/home_cubit.dart';
+import 'package:local_fx/src/features/home/infrastructure/local_fx_service.dart';
 
 class LocalFXApp extends StatelessWidget {
   const LocalFXApp({super.key});
@@ -24,6 +26,12 @@ class LocalFXApp extends StatelessWidget {
               localeService,
               deviceInfoService,
             )..add(AppInitialize());
+          },
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final localFXService = getIt<LocalFXService>();
+            return HomeCubit(localFXService)..init();
           },
         ),
       ],

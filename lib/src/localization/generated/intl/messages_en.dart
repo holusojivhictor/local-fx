@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dark": MessageLookupByLibrary.simpleMessage("Dark"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "light": MessageLookupByLibrary.simpleMessage("Light"),
+        "searchCountry": MessageLookupByLibrary.simpleMessage("Search Country"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings")
       };
 }

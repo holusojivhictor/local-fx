@@ -89,6 +89,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Search Country`
+  String get searchCountry {
+    return Intl.message(
+      'Search Country',
+      name: 'searchCountry',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
