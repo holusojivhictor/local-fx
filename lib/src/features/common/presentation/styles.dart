@@ -5,6 +5,11 @@ import 'package:local_fx/src/features/common/presentation/extensions/context_ext
 class Styles {
   Styles._();
 
+  static const edgeInsetAll16 = EdgeInsets.all(16);
+  static const edgeInsetVertical16 = EdgeInsets.symmetric(vertical: 16);
+
+  static const defaultBorderRadius = BorderRadius.all(Radius.circular(10));
+
   static const inputPadding =
   EdgeInsets.symmetric(horizontal: 12, vertical: 14);
 

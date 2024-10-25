@@ -81,9 +81,10 @@ class _CountrySelectionState extends State<CountrySelection> {
         borderRadius: widget.dropdownDecoration.borderRadius as BorderRadius?,
         onTap: widget.enabled ? _changeCountry : null,
         child: Row(
+          mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const SizedBox(width: 8),
+            const SizedBox(width: 4),
             if (widget.enabled &&
                 widget.showDropdownIcon &&
                 widget.dropdownIconPosition == IconPosition.leading) ...[
@@ -92,13 +93,14 @@ class _CountrySelectionState extends State<CountrySelection> {
             ],
             Text(
               _selectedCountry.flag,
-              style: const TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(width: 6),
             FittedBox(
               child: Text(
                 _selectedCountry.currencyCode,
-                style: widget.dropdownTextStyle,
+                style:
+                    widget.dropdownTextStyle ?? const TextStyle(fontSize: 16),
               ),
             ),
             if (widget.enabled &&
@@ -107,7 +109,7 @@ class _CountrySelectionState extends State<CountrySelection> {
               const SizedBox(width: 4),
               const Icon(Icons.arrow_drop_down),
             ],
-            const SizedBox(width: 4),
+            const SizedBox(width: 8),
           ],
         ),
       ),

@@ -147,7 +147,7 @@ class _CountrySelectionDialogState extends State<CountrySelectionDialog> {
                         _filteredCountries[index]
                             .localizedName(widget.languageCode),
                         style: widget.style?.countryNameStyle ??
-                            const TextStyle(fontWeight: FontWeight.w700),
+                            const TextStyle(fontWeight: FontWeight.w500),
                       ),
                       trailing: Text(
                         _filteredCountries[index].currencyCode,

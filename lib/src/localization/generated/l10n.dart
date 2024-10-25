@@ -50,6 +50,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Ok`
+  String get ok {
+    return Intl.message(
+      'Ok',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Dark`
   String get dark {
     return Intl.message(
@@ -90,11 +100,51 @@ class S {
     );
   }
 
+  /// `Information`
+  String get information {
+    return Intl.message(
+      'Information',
+      name: 'information',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Search Country`
   String get searchCountry {
     return Intl.message(
       'Search Country',
       name: 'searchCountry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We show you currency pairs relevant to your locale.`
+  String get explanationOne {
+    return Intl.message(
+      'We show you currency pairs relevant to your locale.',
+      name: 'explanationOne',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We decide your locale based on your current location if you have permissions on.`
+  String get explanationTwo {
+    return Intl.message(
+      'We decide your locale based on your current location if you have permissions on.',
+      name: 'explanationTwo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can switch the locale by tapping on the flag area at the top left corner.`
+  String get explanationThree {
+    return Intl.message(
+      'You can switch the locale by tapping on the flag area at the top left corner.',
+      name: 'explanationThree',
       desc: '',
       args: [],
     );

@@ -36,3 +36,40 @@ class ExchangeRates extends Equatable {
     rates,
   ];
 }
+
+class Pair extends Equatable {
+  const Pair({
+    required this.timestamp,
+    required this.pair,
+    required this.rate,
+    required this.change,
+  });
+
+  Pair.fake()
+      : timestamp = DateTime.now().millisecondsSinceEpoch,
+        pair = 'AUDHUF',
+        rate = 123.63,
+        change = 0.01;
+
+  final int timestamp;
+  final String pair;
+  final num rate;
+  final double change;
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'timestamp': timestamp,
+      'pair': pair,
+      'rate': rate,
+      'change': change,
+    };
+  }
+
+  @override
+  List<Object?> get props => <Object?>[
+    timestamp,
+    pair,
+    rate,
+    change,
+  ];
+}

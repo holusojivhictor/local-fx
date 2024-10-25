@@ -5,6 +5,8 @@ import 'package:local_fx/src/features/app_widget.dart';
 import 'package:local_fx/src/features/common/application/app/app_bloc.dart';
 import 'package:local_fx/src/features/common/infrastructure/infrastructure.dart';
 import 'package:local_fx/src/features/home/application/home_cubit.dart';
+import 'package:local_fx/src/features/home/infrastructure/exchange_rates_service.dart';
+import 'package:local_fx/src/features/home/infrastructure/fixer_service.dart';
 import 'package:local_fx/src/features/home/infrastructure/local_fx_service.dart';
 
 class LocalFXApp extends StatelessWidget {
@@ -31,7 +33,13 @@ class LocalFXApp extends StatelessWidget {
         BlocProvider(
           create: (ctx) {
             final localFXService = getIt<LocalFXService>();
-            return HomeCubit(localFXService)..init();
+            final exchangeRatesService = getIt<ExchangeRatesService>();
+            final fixerService = getIt<FixerService>();
+            return HomeCubit(
+              localFXService,
+              exchangeRatesService,
+              fixerService,
+            )..init();
           },
         ),
       ],

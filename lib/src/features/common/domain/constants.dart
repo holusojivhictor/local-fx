@@ -4,10 +4,9 @@ import 'package:local_fx/src/features/common/domain/models/models.dart';
 class Constants {
   const Constants._();
 
-  static const String exchangeRatesBaseUrl =
-      'https://api.exchangeratesapi.io/v1/';
+  static const String exchangeRatesAuthority = 'api.exchangeratesapi.io';
 
-  static const String fixerBaseUrl = 'https://data.fixer.io/api/';
+  static const String fixerAuthority = 'data.fixer.io';
 }
 
 /// Languages map
@@ -16,35 +15,35 @@ const languagesMap = {
 };
 
 Country fallbackCountry = Country(
-  name: 'United States of America',
-  isoCode: 'US',
-  iso3Code: 'USA',
-  currencyCode: 'USD',
-  currencyName: 'United States dollar',
+  name: 'France',
+  isoCode: 'FR',
+  iso3Code: 'FRA',
+  currencyCode: 'EUR',
+  currencyName: 'Euro',
   nameTranslations: {
-    'sk': 'Spojené štáty',
-    'se': 'Amerihká ovttastuvvan stáhtat',
-    'pl': 'Stany Zjednoczone',
-    'no': 'USA',
-    'ja': 'アメリカ合衆国',
-    'it': 'Stati Uniti',
-    'zh': '美国',
-    'nl': 'Verenigde Staten',
-    'de': 'Vereinigte Staaten',
-    'fr': 'États-Unis',
-    'es': 'Estados Unidos',
-    'en': 'United States',
-    'pt_BR': 'Estados Unidos',
-    'sr-Cyrl': 'Сједињене Америчке Државе',
-    'sr-Latn': 'Sjedinjene Američke Države',
-    'zh_TW': '美國',
-    'tr': 'Amerika Birleşik Devletleri',
-    'ro': 'Statele Unite ale Americii',
-    'ar': 'الولايات المتحدة',
-    'fa': 'ایالات متحده آمریکا',
-    'yue': '美利堅郃眾囯',
+    'sk': 'Francúzsko',
+    'se': 'Frankriika',
+    'pl': 'Francja',
+    'no': 'Frankrike',
+    'ja': 'フランス',
+    'it': 'Francia',
+    'zh': '法国',
+    'nl': 'Frankrijk',
+    'de': 'Frankreich',
+    'fr': 'France',
+    'es': 'Francia',
+    'en': 'France',
+    'pt_BR': 'França',
+    'sr-Cyrl': 'Француска',
+    'sr-Latn': 'Francuska',
+    'zh_TW': '法國',
+    'tr': 'Fransa',
+    'ro': 'Franța',
+    'ar': 'فرنسا',
+    'fa': 'فرانسه',
+    'yue': '法國',
   },
-  flag: '🇺🇸',
+  flag: '🇫🇷',
 );
 
 /// All countries

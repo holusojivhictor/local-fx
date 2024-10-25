@@ -7,4 +7,6 @@ abstract class ForexService {
     required String date,
     required String base,
   });
+
+  Future<List<Pair>> getLatestRatesWithChanges({required String base});
 }

@@ -23,8 +23,16 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "dark": MessageLookupByLibrary.simpleMessage("Dark"),
+        "explanationOne": MessageLookupByLibrary.simpleMessage(
+            "We show you currency pairs relevant to your locale."),
+        "explanationThree": MessageLookupByLibrary.simpleMessage(
+            "You can switch the locale by tapping on the flag area at the top left corner."),
+        "explanationTwo": MessageLookupByLibrary.simpleMessage(
+            "We decide your locale based on your current location if you have permissions on."),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "information": MessageLookupByLibrary.simpleMessage("Information"),
         "light": MessageLookupByLibrary.simpleMessage("Light"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "searchCountry": MessageLookupByLibrary.simpleMessage("Search Country"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings")
       };

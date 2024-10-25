@@ -25,6 +25,7 @@ class NetworkClient {
       RequestOptions(
         path: uri.path,
         method: 'GET',
+        baseUrl: uri.origin,
         queryParameters: uri.queryParameters,
       ),
       transform: transform,
