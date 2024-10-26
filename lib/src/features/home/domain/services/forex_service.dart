@@ -29,7 +29,8 @@ abstract class ForexService {
         final change = (absolute / pastRate) * 100;
 
         return Pair(
-          pair: '$base$pair',
+          base: base,
+          quote: pair,
           rate: latestRate,
           change: change,
           absolute: absolute,

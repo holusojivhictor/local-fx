@@ -9,4 +9,7 @@ abstract class Env {
 
   @EnviedField(varName: 'CURRENCY_BEACON_API_KEY', obfuscate: true)
   static final String currencyBeaconApiKey = _Env.currencyBeaconApiKey;
+
+  @EnviedField(varName: 'TWELVE_DATA_API_KEY', obfuscate: true)
+  static final String twelveDataApiKey = _Env.twelveDataApiKey;
 }

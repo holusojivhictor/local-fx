@@ -1,0 +1,1 @@
+export 'quote/quote.dart';

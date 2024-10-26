@@ -7,6 +7,8 @@ class Constants {
   static const String fastForexHost = 'api.fastforex.io';
 
   static const String currencyBeaconHost = 'api.currencybeacon.com';
+
+  static const String twelveDataHost = 'api.twelvedata.com';
 }
 
 /// Languages map

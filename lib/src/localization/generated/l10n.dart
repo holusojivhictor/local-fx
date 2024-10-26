@@ -80,11 +80,61 @@ class S {
     );
   }
 
+  /// `Open`
+  String get open {
+    return Intl.message(
+      'Open',
+      name: 'open',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Close`
+  String get close {
+    return Intl.message(
+      'Close',
+      name: 'close',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Light`
   String get light {
     return Intl.message(
       'Light',
       name: 'light',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change`
+  String get change {
+    return Intl.message(
+      'Change',
+      name: 'change',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `24h Low`
+  String get dailyLow {
+    return Intl.message(
+      '24h Low',
+      name: 'dailyLow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `24h High`
+  String get dailyHigh {
+    return Intl.message(
+      '24h High',
+      name: 'dailyHigh',
       desc: '',
       args: [],
     );

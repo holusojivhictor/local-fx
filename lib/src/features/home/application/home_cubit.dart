@@ -50,15 +50,17 @@ class HomeCubit extends Cubit<HomeState>
     } catch (_) {}
   }
 
-  void onCountryChanged(Country country) {
+  void onCountryChanged(Country? country) {
     emit(state.copyWith(country: country));
   }
 
-  Future<void> refreshLocalRates({String? code, bool silent = true}) async {
+  Future<void> refreshLocalRates({Country? country, bool silent = true}) async {
     if (!silent) {
       emit(state.copyWith(loadingRates: true));
     }
-    final currencyCode = code ?? state.country.currencyCode;
+
+    onCountryChanged(country);
+    final currencyCode = country?.currencyCode ?? state.country.currencyCode;
 
     try {
       final pairs = await _fastForexService.getLatestRatesWithChanges(
@@ -81,8 +83,7 @@ class HomeCubit extends Cubit<HomeState>
             ),
           );
 
-          emit(state.copyWith(country: fallbackCountry, currencyPairs: []));
-          await refreshLocalRates(code: fallbackCode);
+          await refreshLocalRates(country: fallbackCountry);
         }
 
         emit(state.copyWith(loadingRates: false));

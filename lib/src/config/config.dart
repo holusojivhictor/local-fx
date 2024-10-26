@@ -10,4 +10,6 @@ class Config {
   static final String fastForexApiKey = Env.fastForexApiKey;
 
   static final String currencyBeaconApiKey = Env.currencyBeaconApiKey;
+
+  static final String twelveDataApiKey = Env.twelveDataApiKey;
 }

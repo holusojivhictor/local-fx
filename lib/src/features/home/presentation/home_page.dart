@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:local_fx/src/features/common/application/app/app_bloc.dart';
 import 'package:local_fx/src/features/common/presentation/bloc_presentation/bloc_presentation_listener.dart';
 import 'package:local_fx/src/features/common/presentation/styles.dart';
@@ -10,6 +11,7 @@ import 'package:local_fx/src/features/home/presentation/widgets/country_selectio
 import 'package:local_fx/src/features/home/presentation/widgets/currency_pair_tile.dart';
 import 'package:local_fx/src/features/home/presentation/widgets/info_dialog.dart';
 import 'package:local_fx/src/features/home/presentation/widgets/pairs_skeleton.dart';
+import 'package:local_fx/src/features/pair_info/domain/models/args/pair_info_page_args.dart';
 import 'package:local_fx/src/localization/generated/l10n.dart';
 import 'package:local_fx/src/utils/toast_utils.dart';
 
@@ -42,9 +44,7 @@ class _HomePageState extends State<HomePage> {
                   return BlocBuilder<AppBloc, AppState>(
                     builder: (_, appState) {
                       return CountrySelection(
-                        key: ValueKey(
-                          '${state.country.isoCode}${state.currencyPairs.length}',
-                        ),
+                        key: ValueKey(state.country.isoCode),
                         languageCode: appState.language.code,
                         initialCountryCode: state.country.isoCode,
                         dropdownDecoration: const BoxDecoration(
@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         onCountryChanged: (country) {
                           context.read<HomeCubit>().refreshLocalRates(
-                                code: country.currencyCode,
+                                country: country,
                                 silent: false,
                               );
                         },
@@ -81,18 +81,21 @@ class _HomePageState extends State<HomePage> {
             builder: (context, state) {
               return state.loadingRates
                   ? const PairsSkeleton()
-                  : ListView.separated(
-                      itemCount: state.currencyPairs.length,
-                      padding: Styles.edgeInsetVertical16,
-                      separatorBuilder: (_, index) {
-                        return const SizedBox(height: 16);
-                      },
-                      itemBuilder: (ctx, index) {
-                        return CurrencyPairTile(
-                          pair: state.currencyPairs[index],
-                          onPressed: onPairTapped,
-                        );
-                      },
+                  : RefreshIndicator(
+                      onRefresh: context.read<HomeCubit>().refreshLocalRates,
+                      child: ListView.separated(
+                        itemCount: state.currencyPairs.length,
+                        padding: Styles.edgeInsetVertical16,
+                        separatorBuilder: (_, index) {
+                          return const SizedBox(height: 16);
+                        },
+                        itemBuilder: (ctx, index) {
+                          return CurrencyPairTile(
+                            pair: state.currencyPairs[index],
+                            onPressed: onPairTapped,
+                          );
+                        },
+                      ),
                     );
             },
           ),
@@ -101,7 +104,11 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void onPairTapped(Pair pair) {}
+  void onPairTapped(Pair pair) {
+    final args = PairInfoPageArgs(base: pair.base, symbol: pair.quote);
+
+    context.pushNamed('pair-info', extra: args);
+  }
 
   void onLocaleError(String error) {
     final fToast = ToastUtils.of(context);

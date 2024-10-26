@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:local_fx/src/features/common/infrastructure/infrastructure.dart';
 import 'package:local_fx/src/features/common/infrastructure/network_client.dart';
 import 'package:local_fx/src/features/home/infrastructure/infrastructure.dart';
+import 'package:local_fx/src/features/pair_info/infrastructure/twelve_data_service.dart';
 
 final GetIt getIt = GetIt.instance;
 
@@ -24,13 +25,16 @@ class Injection {
     final networkClient = NetworkClient(loggingService);
     getIt.registerSingleton<NetworkClient>(networkClient);
 
+    final localFxService = LocalFXService();
+    getIt.registerSingleton<LocalFXService>(localFxService);
+
     final fastForexService = FastForexService(networkClient);
     getIt.registerSingleton<FastForexService>(fastForexService);
 
     final currencyBeaconService = CurrencyBeaconService(networkClient);
     getIt.registerSingleton<CurrencyBeaconService>(currencyBeaconService);
 
-    final localFxService = LocalFXService();
-    getIt.registerSingleton<LocalFXService>(localFxService);
+    final twelveDataService = TwelveDataService(networkClient);
+    getIt.registerSingleton<TwelveDataService>(twelveDataService);
   }
 }
