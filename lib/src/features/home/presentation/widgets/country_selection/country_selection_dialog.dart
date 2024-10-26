@@ -13,7 +13,8 @@ extension CountryExtensions on List<Country> {
               .contains(search) ||
           country.nameTranslations.values.any(
             (element) => element.toLowerCase().noDiacritics.contains(search),
-          ),
+          ) ||
+          country.currencyCode.toLowerCase().noDiacritics.contains(search),
     ).toList();
   }
 }

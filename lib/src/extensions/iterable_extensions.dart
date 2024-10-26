@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/widgets.dart';
 
 extension IterableExtensions<E> on Iterable<E> {
@@ -24,4 +26,10 @@ extension SeparatedIterable on Iterable<Widget> {
     }
     return result;
   }
+}
+
+extension MinMaxExtensions on Iterable<double> {
+  double get max => reduce(math.max);
+
+  double get min => reduce(math.min);
 }

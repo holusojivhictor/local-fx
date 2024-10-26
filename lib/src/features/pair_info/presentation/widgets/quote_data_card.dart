@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:local_fx/src/extensions/extensions.dart';
 import 'package:local_fx/src/features/common/presentation/styles.dart';
-import 'package:local_fx/src/features/pair_info/domain/models/quote/quote.dart';
+import 'package:local_fx/src/features/pair_info/domain/models/quote.dart';
 import 'package:local_fx/src/localization/generated/l10n.dart';
 
 class QuoteDataCard extends StatelessWidget {

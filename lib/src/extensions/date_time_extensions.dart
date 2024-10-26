@@ -23,4 +23,13 @@ extension DateTimeExtensions on DateTime {
     final dateFormat = DateFormat.yMMMMd('en_US');
     return dateFormat.format(this);
   }
+
+  String get chartDay {
+    final dateFormat = DateFormat.MMMd('en_US');
+    return dateFormat.format(this);
+  }
+
+  String get chartTime {
+    return DateFormat('hh:mm').format(this);
+  }
 }

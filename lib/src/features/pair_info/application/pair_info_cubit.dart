@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:local_fx/src/features/pair_info/domain/enums/interval.dart';
 import 'package:local_fx/src/features/pair_info/domain/models/models.dart';
 import 'package:local_fx/src/features/pair_info/infrastructure/twelve_data_service.dart';
 
@@ -15,10 +16,11 @@ class PairInfoCubit extends Cubit<PairInfoState> {
   final TwelveDataService _twelveDataService;
 
   void init() {
-    refreshQuoteFomSymbol();
+    fetchQuoteForSymbol();
+    fetchTimeSeriesDataForSymbol();
   }
 
-  Future<void> refreshQuoteFomSymbol() async {
+  Future<void> fetchQuoteForSymbol() async {
     emit(state.copyWith(loadingQuote: true));
 
     try {
@@ -29,6 +31,27 @@ class PairInfoCubit extends Cubit<PairInfoState> {
       emit(state.copyWith(quote: quote, loadingQuote: false));
     } catch (_) {
       emit(state.copyWith(loadingQuote: false));
+    }
+  }
+
+  Future<void> fetchTimeSeriesDataForSymbol() async {
+    emit(state.copyWith(loadingTimeSeries: true));
+
+    try {
+      final candlesticks = await _twelveDataService.getTimeSeriesData(
+        symbol: state.pair,
+        interval: PointInterval.fifteenMins,
+        outputSize: '50',
+      );
+
+      emit(
+        state.copyWith(
+          candlesticks: candlesticks,
+          loadingTimeSeries: false,
+        ),
+      );
+    } catch (_) {
+      emit(state.copyWith(loadingTimeSeries: false));
     }
   }
 }
