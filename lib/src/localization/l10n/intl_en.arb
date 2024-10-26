@@ -8,6 +8,7 @@
   "darkMode": "Dark Mode",
   "information": "Information",
   "searchCountry": "Search Country",
+  "chooseLanguage": "Choose a language",
   "syncWithDeviceTheme": "Sync with device theme",
   "explanationOne": "We show you currency pairs relevant to your locale.",
   "explanationTwo": "We decide your locale based on your current location if you have permissions on.",

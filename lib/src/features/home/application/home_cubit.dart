@@ -4,9 +4,7 @@ import 'package:local_fx/src/features/common/domain/constants.dart';
 import 'package:local_fx/src/features/common/domain/models/models.dart';
 import 'package:local_fx/src/features/common/presentation/bloc_presentation/bloc_presentation_mixin.dart';
 import 'package:local_fx/src/features/home/domain/models/exchange_rates/exchange_rates.dart';
-import 'package:local_fx/src/features/home/infrastructure/exchange_rates_service.dart';
-import 'package:local_fx/src/features/home/infrastructure/fixer_service.dart';
-import 'package:local_fx/src/features/home/infrastructure/local_fx_service.dart';
+import 'package:local_fx/src/features/home/infrastructure/infrastructure.dart';
 import 'package:local_fx/src/utils/location_utils.dart';
 
 part 'home_state.dart';
@@ -15,13 +13,13 @@ class HomeCubit extends Cubit<HomeState>
     with BlocPresentationMixin<HomeState, HomeCubitEvent> {
   HomeCubit(
     this._fxService,
-    this._exchangeRatesService,
-    this._fixerService,
+    this._fastForexService,
+    this._currencyBeaconService,
   ) : super(HomeState.init());
 
   final LocalFXService _fxService;
-  final ExchangeRatesService _exchangeRatesService;
-  final FixerService _fixerService;
+  final FastForexService _fastForexService;
+  final CurrencyBeaconService _currencyBeaconService;
 
   Future<void> init() async {
     try {
@@ -56,18 +54,21 @@ class HomeCubit extends Cubit<HomeState>
     emit(state.copyWith(country: country));
   }
 
-  Future<void> refreshLocalRates([String? code]) async {
+  Future<void> refreshLocalRates({String? code, bool silent = true}) async {
+    if (!silent) {
+      emit(state.copyWith(loadingRates: true));
+    }
     final currencyCode = code ?? state.country.currencyCode;
 
     try {
-      final pairs = await _exchangeRatesService.getLatestRatesWithChanges(
+      final pairs = await _fastForexService.getLatestRatesWithChanges(
         base: currencyCode,
       );
 
       emit(state.copyWith(currencyPairs: pairs, loadingRates: false));
     } catch (_) {
       try {
-        final pairs = await _fixerService.getLatestRatesWithChanges(
+        final pairs = await _currencyBeaconService.getLatestRatesWithChanges(
           base: currencyCode,
         );
         emit(state.copyWith(currencyPairs: pairs, loadingRates: false));
@@ -80,8 +81,8 @@ class HomeCubit extends Cubit<HomeState>
             ),
           );
 
-          onCountryChanged(fallbackCountry);
-          await refreshLocalRates(fallbackCode);
+          emit(state.copyWith(country: fallbackCountry, currencyPairs: []));
+          await refreshLocalRates(code: fallbackCode);
         }
 
         emit(state.copyWith(loadingRates: false));

@@ -4,9 +4,9 @@ import 'package:local_fx/src/features/common/domain/models/models.dart';
 class Constants {
   const Constants._();
 
-  static const String exchangeRatesAuthority = 'api.exchangeratesapi.io';
+  static const String fastForexHost = 'api.fastforex.io';
 
-  static const String fixerAuthority = 'data.fixer.io';
+  static const String currencyBeaconHost = 'api.currencybeacon.com';
 }
 
 /// Languages map
@@ -14,7 +14,7 @@ const languagesMap = {
   AppLanguageType.english: Language('en', 'US'),
 };
 
-Country fallbackCountry = Country(
+Country fallbackCountry = const Country(
   name: 'France',
   isoCode: 'FR',
   iso3Code: 'FRA',
@@ -48,7 +48,7 @@ Country fallbackCountry = Country(
 
 /// All countries
 final List<Country> countries = [
-  Country(
+  const Country(
     name: 'Afghanistan',
     isoCode: 'AF',
     iso3Code: 'AFG',
@@ -79,7 +79,7 @@ final List<Country> countries = [
     },
     flag: '🇦🇫',
   ),
-  Country(
+  const Country(
     name: 'Åland Islands',
     isoCode: 'AX',
     iso3Code: 'ALA',
@@ -110,7 +110,7 @@ final List<Country> countries = [
     },
     flag: '🇦🇽',
   ),
-  Country(
+  const Country(
     name: 'Albania',
     isoCode: 'AL',
     iso3Code: 'ALB',
@@ -141,7 +141,7 @@ final List<Country> countries = [
     },
     flag: '🇦🇱',
   ),
-  Country(
+  const Country(
     name: 'Algeria',
     isoCode: 'DZ',
     iso3Code: 'DZA',
@@ -172,7 +172,7 @@ final List<Country> countries = [
     },
     flag: '🇩🇿',
   ),
-  Country(
+  const Country(
     name: 'American Samoa',
     isoCode: 'AS',
     iso3Code: 'ASM',
@@ -203,7 +203,7 @@ final List<Country> countries = [
     },
     flag: '🇦🇸',
   ),
-  Country(
+  const Country(
     name: 'Andorra',
     isoCode: 'AD',
     iso3Code: 'AND',
@@ -234,7 +234,7 @@ final List<Country> countries = [
     },
     flag: '🇦🇩',
   ),
-  Country(
+  const Country(
     name: 'Angola',
     isoCode: 'AO',
     iso3Code: 'AGO',
@@ -265,7 +265,7 @@ final List<Country> countries = [
     },
     flag: '🇦🇴',
   ),
-  Country(
+  const Country(
     name: 'Anguilla',
     isoCode: 'AI',
     iso3Code: 'AIA',
@@ -296,7 +296,7 @@ final List<Country> countries = [
     },
     flag: '🇦🇮',
   ),
-  Country(
+  const Country(
     name: 'Antarctica',
     isoCode: 'AQ',
     iso3Code: 'ATA',
@@ -327,7 +327,7 @@ final List<Country> countries = [
     },
     flag: '🇦🇶',
   ),
-  Country(
+  const Country(
     name: 'Antigua and Barbuda',
     isoCode: 'AG',
     iso3Code: 'ATG',
@@ -358,7 +358,7 @@ final List<Country> countries = [
     },
     flag: '🇦🇬',
   ),
-  Country(
+  const Country(
     name: 'Argentina',
     isoCode: 'AR',
     iso3Code: 'ARG',
@@ -389,7 +389,7 @@ final List<Country> countries = [
     },
     flag: '🇦🇷',
   ),
-  Country(
+  const Country(
     name: 'Armenia',
     isoCode: 'AM',
     iso3Code: 'ARM',
@@ -420,7 +420,7 @@ final List<Country> countries = [
     },
     flag: '🇦🇲',
   ),
-  Country(
+  const Country(
     name: 'Aruba',
     isoCode: 'AW',
     iso3Code: 'ABW',
@@ -451,7 +451,7 @@ final List<Country> countries = [
     },
     flag: '🇦🇼',
   ),
-  Country(
+  const Country(
     name: 'Australia',
     isoCode: 'AU',
     iso3Code: 'AUS',
@@ -482,7 +482,7 @@ final List<Country> countries = [
     },
     flag: '🇦🇺',
   ),
-  Country(
+  const Country(
     name: 'Austria',
     isoCode: 'AT',
     iso3Code: 'AUT',
@@ -513,7 +513,7 @@ final List<Country> countries = [
     },
     flag: '🇦🇹',
   ),
-  Country(
+  const Country(
     name: 'Azerbaijan',
     isoCode: 'AZ',
     iso3Code: 'AZE',
@@ -544,7 +544,7 @@ final List<Country> countries = [
     },
     flag: '🇦🇿',
   ),
-  Country(
+  const Country(
     name: 'Bahamas',
     isoCode: 'BS',
     iso3Code: 'BHS',
@@ -575,7 +575,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇸',
   ),
-  Country(
+  const Country(
     name: 'Bahrain',
     isoCode: 'BH',
     iso3Code: 'BHR',
@@ -606,7 +606,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇭',
   ),
-  Country(
+  const Country(
     name: 'Bangladesh',
     isoCode: 'BD',
     iso3Code: 'BGD',
@@ -637,7 +637,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇩',
   ),
-  Country(
+  const Country(
     name: 'Barbados',
     isoCode: 'BB',
     iso3Code: 'BRB',
@@ -668,7 +668,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇧',
   ),
-  Country(
+  const Country(
     name: 'Belarus',
     isoCode: 'BY',
     iso3Code: 'BLR',
@@ -699,7 +699,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇾',
   ),
-  Country(
+  const Country(
     name: 'Belgium',
     isoCode: 'BE',
     iso3Code: 'BEL',
@@ -730,7 +730,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇪',
   ),
-  Country(
+  const Country(
     name: 'Belize',
     isoCode: 'BZ',
     iso3Code: 'BLZ',
@@ -761,7 +761,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇿',
   ),
-  Country(
+  const Country(
     name: 'Benin',
     isoCode: 'BJ',
     iso3Code: 'BEN',
@@ -792,7 +792,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇯',
   ),
-  Country(
+  const Country(
     name: 'Bermuda',
     isoCode: 'BM',
     iso3Code: 'BMU',
@@ -823,7 +823,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇲',
   ),
-  Country(
+  const Country(
     name: 'Bhutan',
     isoCode: 'BT',
     iso3Code: 'BTN',
@@ -854,7 +854,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇹',
   ),
-  Country(
+  const Country(
     name: 'Bolivia (Plurinational State of)',
     isoCode: 'BO',
     iso3Code: 'BOL',
@@ -885,7 +885,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇴',
   ),
-  Country(
+  const Country(
     name: 'Bosnia and Herzegovina',
     isoCode: 'BA',
     iso3Code: 'BIH',
@@ -916,7 +916,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇦',
   ),
-  Country(
+  const Country(
     name: 'Botswana',
     isoCode: 'BW',
     iso3Code: 'BWA',
@@ -947,7 +947,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇼',
   ),
-  Country(
+  const Country(
     name: 'Bouvet Island',
     isoCode: 'BV',
     iso3Code: 'BVT',
@@ -978,7 +978,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇻',
   ),
-  Country(
+  const Country(
     name: 'Brazil',
     isoCode: 'BR',
     iso3Code: 'BRA',
@@ -1009,7 +1009,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇷',
   ),
-  Country(
+  const Country(
     name: 'British Indian Ocean Territory',
     isoCode: 'IO',
     iso3Code: 'IOT',
@@ -1040,7 +1040,7 @@ final List<Country> countries = [
     },
     flag: '🇮🇴',
   ),
-  Country(
+  const Country(
     name: 'Virgin Islands (British)',
     isoCode: 'VG',
     iso3Code: 'VGB',
@@ -1071,7 +1071,7 @@ final List<Country> countries = [
     },
     flag: '🇻🇬',
   ),
-  Country(
+  const Country(
     name: 'Virgin Islands (U.S.)',
     isoCode: 'VI',
     iso3Code: 'VIR',
@@ -1102,7 +1102,7 @@ final List<Country> countries = [
     },
     flag: '🇻🇮',
   ),
-  Country(
+  const Country(
     name: 'Brunei Darussalam',
     isoCode: 'BN',
     iso3Code: 'BRN',
@@ -1133,7 +1133,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇳',
   ),
-  Country(
+  const Country(
     name: 'Bulgaria',
     isoCode: 'BG',
     iso3Code: 'BGR',
@@ -1164,7 +1164,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇬',
   ),
-  Country(
+  const Country(
     name: 'Burkina Faso',
     isoCode: 'BF',
     iso3Code: 'BFA',
@@ -1195,7 +1195,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇫',
   ),
-  Country(
+  const Country(
     name: 'Burundi',
     isoCode: 'BI',
     iso3Code: 'BDI',
@@ -1226,7 +1226,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇮',
   ),
-  Country(
+  const Country(
     name: 'Cambodia',
     isoCode: 'KH',
     iso3Code: 'KHM',
@@ -1257,7 +1257,7 @@ final List<Country> countries = [
     },
     flag: '🇰🇭',
   ),
-  Country(
+  const Country(
     name: 'Cameroon',
     isoCode: 'CM',
     iso3Code: 'CMR',
@@ -1288,7 +1288,7 @@ final List<Country> countries = [
     },
     flag: '🇨🇲',
   ),
-  Country(
+  const Country(
     name: 'Canada',
     isoCode: 'CA',
     iso3Code: 'CAN',
@@ -1319,7 +1319,7 @@ final List<Country> countries = [
     },
     flag: '🇨🇦',
   ),
-  Country(
+  const Country(
     name: 'Cayman Islands',
     isoCode: 'KY',
     iso3Code: 'CYM',
@@ -1350,7 +1350,7 @@ final List<Country> countries = [
     },
     flag: '🇰🇾',
   ),
-  Country(
+  const Country(
     name: 'Central African Republic',
     isoCode: 'CF',
     iso3Code: 'CAF',
@@ -1381,7 +1381,7 @@ final List<Country> countries = [
     },
     flag: '🇨🇫',
   ),
-  Country(
+  const Country(
     name: 'Chad',
     isoCode: 'TD',
     iso3Code: 'TCD',
@@ -1412,7 +1412,7 @@ final List<Country> countries = [
     },
     flag: '🇹🇩',
   ),
-  Country(
+  const Country(
     name: 'Chile',
     isoCode: 'CL',
     iso3Code: 'CHL',
@@ -1443,7 +1443,7 @@ final List<Country> countries = [
     },
     flag: '🇨🇱',
   ),
-  Country(
+  const Country(
     name: 'China',
     isoCode: 'CN',
     iso3Code: 'CHN',
@@ -1474,7 +1474,7 @@ final List<Country> countries = [
     },
     flag: '🇨🇳',
   ),
-  Country(
+  const Country(
     name: 'Christmas Island',
     isoCode: 'CX',
     iso3Code: 'CXR',
@@ -1505,7 +1505,7 @@ final List<Country> countries = [
     },
     flag: '🇨🇽',
   ),
-  Country(
+  const Country(
     name: 'Cocos (Keeling) Islands',
     isoCode: 'CC',
     iso3Code: 'CCK',
@@ -1536,7 +1536,7 @@ final List<Country> countries = [
     },
     flag: '🇨🇨',
   ),
-  Country(
+  const Country(
     name: 'Colombia',
     isoCode: 'CO',
     iso3Code: 'COL',
@@ -1567,7 +1567,7 @@ final List<Country> countries = [
     },
     flag: '🇨🇴',
   ),
-  Country(
+  const Country(
     name: 'Comoros',
     isoCode: 'KM',
     iso3Code: 'COM',
@@ -1598,7 +1598,7 @@ final List<Country> countries = [
     },
     flag: '🇰🇲',
   ),
-  Country(
+  const Country(
     name: 'Congo',
     isoCode: 'CG',
     iso3Code: 'COG',
@@ -1629,7 +1629,7 @@ final List<Country> countries = [
     },
     flag: '🇨🇬',
   ),
-  Country(
+  const Country(
     name: 'Congo (Democratic Republic of the)',
     isoCode: 'CD',
     iso3Code: 'COD',
@@ -1660,7 +1660,7 @@ final List<Country> countries = [
     },
     flag: '🇨🇩',
   ),
-  Country(
+  const Country(
     name: 'Cook Islands',
     isoCode: 'CK',
     iso3Code: 'COK',
@@ -1691,7 +1691,7 @@ final List<Country> countries = [
     },
     flag: '🇨🇰',
   ),
-  Country(
+  const Country(
     name: 'Costa Rica',
     isoCode: 'CR',
     iso3Code: 'CRI',
@@ -1722,7 +1722,7 @@ final List<Country> countries = [
     },
     flag: '🇨🇷',
   ),
-  Country(
+  const Country(
     name: 'Croatia',
     isoCode: 'HR',
     iso3Code: 'HRV',
@@ -1753,7 +1753,7 @@ final List<Country> countries = [
     },
     flag: '🇭🇷',
   ),
-  Country(
+  const Country(
     name: 'Cuba',
     isoCode: 'CU',
     iso3Code: 'CUB',
@@ -1784,7 +1784,7 @@ final List<Country> countries = [
     },
     flag: '🇨🇺',
   ),
-  Country(
+  const Country(
     name: 'Cyprus',
     isoCode: 'CY',
     iso3Code: 'CYP',
@@ -1815,7 +1815,7 @@ final List<Country> countries = [
     },
     flag: '🇨🇾',
   ),
-  Country(
+  const Country(
     name: 'Czech Republic',
     isoCode: 'CZ',
     iso3Code: 'CZE',
@@ -1846,7 +1846,7 @@ final List<Country> countries = [
     },
     flag: '🇨🇿',
   ),
-  Country(
+  const Country(
     name: 'Denmark',
     isoCode: 'DK',
     iso3Code: 'DNK',
@@ -1877,7 +1877,7 @@ final List<Country> countries = [
     },
     flag: '🇩🇰',
   ),
-  Country(
+  const Country(
     name: 'Djibouti',
     isoCode: 'DJ',
     iso3Code: 'DJI',
@@ -1908,7 +1908,7 @@ final List<Country> countries = [
     },
     flag: '🇩🇯',
   ),
-  Country(
+  const Country(
     name: 'Dominica',
     isoCode: 'DM',
     iso3Code: 'DMA',
@@ -1939,7 +1939,7 @@ final List<Country> countries = [
     },
     flag: '🇩🇲',
   ),
-  Country(
+  const Country(
     name: 'Dominican Republic',
     isoCode: 'DO',
     iso3Code: 'DOM',
@@ -1970,7 +1970,7 @@ final List<Country> countries = [
     },
     flag: '🇩🇴',
   ),
-  Country(
+  const Country(
     name: 'Ecuador',
     isoCode: 'EC',
     iso3Code: 'ECU',
@@ -2001,7 +2001,7 @@ final List<Country> countries = [
     },
     flag: '🇪🇨',
   ),
-  Country(
+  const Country(
     name: 'Egypt',
     isoCode: 'EG',
     iso3Code: 'EGY',
@@ -2032,7 +2032,7 @@ final List<Country> countries = [
     },
     flag: '🇪🇬',
   ),
-  Country(
+  const Country(
     name: 'El Salvador',
     isoCode: 'SV',
     iso3Code: 'SLV',
@@ -2063,7 +2063,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇻',
   ),
-  Country(
+  const Country(
     name: 'Equatorial Guinea',
     isoCode: 'GQ',
     iso3Code: 'GNQ',
@@ -2094,7 +2094,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇶',
   ),
-  Country(
+  const Country(
     name: 'Eritrea',
     isoCode: 'ER',
     iso3Code: 'ERI',
@@ -2125,7 +2125,7 @@ final List<Country> countries = [
     },
     flag: '🇪🇷',
   ),
-  Country(
+  const Country(
     name: 'Estonia',
     isoCode: 'EE',
     iso3Code: 'EST',
@@ -2156,7 +2156,7 @@ final List<Country> countries = [
     },
     flag: '🇪🇪',
   ),
-  Country(
+  const Country(
     name: 'Ethiopia',
     isoCode: 'ET',
     iso3Code: 'ETH',
@@ -2187,7 +2187,7 @@ final List<Country> countries = [
     },
     flag: '🇪🇹',
   ),
-  Country(
+  const Country(
     name: 'Falkland Islands (Malvinas)',
     isoCode: 'FK',
     iso3Code: 'FLK',
@@ -2218,7 +2218,7 @@ final List<Country> countries = [
     },
     flag: '🇫🇰',
   ),
-  Country(
+  const Country(
     name: 'Faroe Islands',
     isoCode: 'FO',
     iso3Code: 'FRO',
@@ -2249,7 +2249,7 @@ final List<Country> countries = [
     },
     flag: '🇫🇴',
   ),
-  Country(
+  const Country(
     name: 'Fiji',
     isoCode: 'FJ',
     iso3Code: 'FJI',
@@ -2280,7 +2280,7 @@ final List<Country> countries = [
     },
     flag: '🇫🇯',
   ),
-  Country(
+  const Country(
     name: 'Finland',
     isoCode: 'FI',
     iso3Code: 'FIN',
@@ -2311,7 +2311,7 @@ final List<Country> countries = [
     },
     flag: '🇫🇮',
   ),
-  Country(
+  const Country(
     name: 'France',
     isoCode: 'FR',
     iso3Code: 'FRA',
@@ -2342,7 +2342,7 @@ final List<Country> countries = [
     },
     flag: '🇫🇷',
   ),
-  Country(
+  const Country(
     name: 'French Guiana',
     isoCode: 'GF',
     iso3Code: 'GUF',
@@ -2373,7 +2373,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇫',
   ),
-  Country(
+  const Country(
     name: 'French Polynesia',
     isoCode: 'PF',
     iso3Code: 'PYF',
@@ -2404,7 +2404,7 @@ final List<Country> countries = [
     },
     flag: '🇵🇫',
   ),
-  Country(
+  const Country(
     name: 'French Southern Territories',
     isoCode: 'TF',
     iso3Code: 'ATF',
@@ -2435,7 +2435,7 @@ final List<Country> countries = [
     },
     flag: '🇹🇫',
   ),
-  Country(
+  const Country(
     name: 'Gabon',
     isoCode: 'GA',
     iso3Code: 'GAB',
@@ -2466,7 +2466,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇦',
   ),
-  Country(
+  const Country(
     name: 'Gambia',
     isoCode: 'GM',
     iso3Code: 'GMB',
@@ -2497,7 +2497,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇲',
   ),
-  Country(
+  const Country(
     name: 'Georgia',
     isoCode: 'GE',
     iso3Code: 'GEO',
@@ -2528,7 +2528,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇪',
   ),
-  Country(
+  const Country(
     name: 'Germany',
     isoCode: 'DE',
     iso3Code: 'DEU',
@@ -2559,7 +2559,7 @@ final List<Country> countries = [
     },
     flag: '🇩🇪',
   ),
-  Country(
+  const Country(
     name: 'Ghana',
     isoCode: 'GH',
     iso3Code: 'GHA',
@@ -2590,7 +2590,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇭',
   ),
-  Country(
+  const Country(
     name: 'Gibraltar',
     isoCode: 'GI',
     iso3Code: 'GIB',
@@ -2621,7 +2621,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇮',
   ),
-  Country(
+  const Country(
     name: 'Greece',
     isoCode: 'GR',
     iso3Code: 'GRC',
@@ -2652,7 +2652,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇷',
   ),
-  Country(
+  const Country(
     name: 'Greenland',
     isoCode: 'GL',
     iso3Code: 'GRL',
@@ -2683,7 +2683,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇱',
   ),
-  Country(
+  const Country(
     name: 'Grenada',
     isoCode: 'GD',
     iso3Code: 'GRD',
@@ -2714,7 +2714,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇩',
   ),
-  Country(
+  const Country(
     name: 'Guadeloupe',
     isoCode: 'GP',
     iso3Code: 'GLP',
@@ -2745,7 +2745,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇵',
   ),
-  Country(
+  const Country(
     name: 'Guam',
     isoCode: 'GU',
     iso3Code: 'GUM',
@@ -2776,7 +2776,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇺',
   ),
-  Country(
+  const Country(
     name: 'Guatemala',
     isoCode: 'GT',
     iso3Code: 'GTM',
@@ -2807,7 +2807,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇹',
   ),
-  Country(
+  const Country(
     name: 'Guernsey',
     isoCode: 'GG',
     iso3Code: 'GGY',
@@ -2838,7 +2838,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇬',
   ),
-  Country(
+  const Country(
     name: 'Guinea',
     isoCode: 'GN',
     iso3Code: 'GIN',
@@ -2869,7 +2869,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇳',
   ),
-  Country(
+  const Country(
     name: 'Guinea-Bissau',
     isoCode: 'GW',
     iso3Code: 'GNB',
@@ -2900,7 +2900,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇼',
   ),
-  Country(
+  const Country(
     name: 'Guyana',
     isoCode: 'GY',
     iso3Code: 'GUY',
@@ -2931,7 +2931,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇾',
   ),
-  Country(
+  const Country(
     name: 'Haiti',
     isoCode: 'HT',
     iso3Code: 'HTI',
@@ -2962,7 +2962,7 @@ final List<Country> countries = [
     },
     flag: '🇭🇹',
   ),
-  Country(
+  const Country(
     name: 'Heard Island and McDonald Islands',
     isoCode: 'HM',
     iso3Code: 'HMD',
@@ -2993,7 +2993,7 @@ final List<Country> countries = [
     },
     flag: '🇭🇲',
   ),
-  Country(
+  const Country(
     name: 'Holy See',
     isoCode: 'VA',
     iso3Code: 'VAT',
@@ -3024,7 +3024,7 @@ final List<Country> countries = [
     },
     flag: '🇻🇦',
   ),
-  Country(
+  const Country(
     name: 'Honduras',
     isoCode: 'HN',
     iso3Code: 'HND',
@@ -3055,7 +3055,7 @@ final List<Country> countries = [
     },
     flag: '🇭🇳',
   ),
-  Country(
+  const Country(
     name: 'Hong Kong',
     isoCode: 'HK',
     iso3Code: 'HKG',
@@ -3086,7 +3086,7 @@ final List<Country> countries = [
     },
     flag: '🇭🇰',
   ),
-  Country(
+  const Country(
     name: 'Hungary',
     isoCode: 'HU',
     iso3Code: 'HUN',
@@ -3117,7 +3117,7 @@ final List<Country> countries = [
     },
     flag: '🇭🇺',
   ),
-  Country(
+  const Country(
     name: 'Iceland',
     isoCode: 'IS',
     iso3Code: 'ISL',
@@ -3148,7 +3148,7 @@ final List<Country> countries = [
     },
     flag: '🇮🇸',
   ),
-  Country(
+  const Country(
     name: 'India',
     isoCode: 'IN',
     iso3Code: 'IND',
@@ -3179,7 +3179,7 @@ final List<Country> countries = [
     },
     flag: '🇮🇳',
   ),
-  Country(
+  const Country(
     name: 'Indonesia',
     isoCode: 'ID',
     iso3Code: 'IDN',
@@ -3210,7 +3210,7 @@ final List<Country> countries = [
     },
     flag: '🇮🇩',
   ),
-  Country(
+  const Country(
     name: "Côte d'Ivoire",
     isoCode: 'CI',
     iso3Code: 'CIV',
@@ -3241,7 +3241,7 @@ final List<Country> countries = [
     },
     flag: '🇨🇮',
   ),
-  Country(
+  const Country(
     name: 'Iran (Islamic Republic of)',
     isoCode: 'IR',
     iso3Code: 'IRN',
@@ -3272,7 +3272,7 @@ final List<Country> countries = [
     },
     flag: '🇮🇷',
   ),
-  Country(
+  const Country(
     name: 'Iraq',
     isoCode: 'IQ',
     iso3Code: 'IRQ',
@@ -3303,7 +3303,7 @@ final List<Country> countries = [
     },
     flag: '🇮🇶',
   ),
-  Country(
+  const Country(
     name: 'Ireland',
     isoCode: 'IE',
     iso3Code: 'IRL',
@@ -3334,7 +3334,7 @@ final List<Country> countries = [
     },
     flag: '🇮🇪',
   ),
-  Country(
+  const Country(
     name: 'Isle of Man',
     isoCode: 'IM',
     iso3Code: 'IMN',
@@ -3365,7 +3365,7 @@ final List<Country> countries = [
     },
     flag: '🇮🇲',
   ),
-  Country(
+  const Country(
     name: 'Israel',
     isoCode: 'IL',
     iso3Code: 'ISR',
@@ -3396,7 +3396,7 @@ final List<Country> countries = [
     },
     flag: '🇮🇱',
   ),
-  Country(
+  const Country(
     name: 'Italy',
     isoCode: 'IT',
     iso3Code: 'ITA',
@@ -3427,7 +3427,7 @@ final List<Country> countries = [
     },
     flag: '🇮🇹',
   ),
-  Country(
+  const Country(
     name: 'Jamaica',
     isoCode: 'JM',
     iso3Code: 'JAM',
@@ -3458,7 +3458,7 @@ final List<Country> countries = [
     },
     flag: '🇯🇲',
   ),
-  Country(
+  const Country(
     name: 'Japan',
     isoCode: 'JP',
     iso3Code: 'JPN',
@@ -3489,7 +3489,7 @@ final List<Country> countries = [
     },
     flag: '🇯🇵',
   ),
-  Country(
+  const Country(
     name: 'Jersey',
     isoCode: 'JE',
     iso3Code: 'JEY',
@@ -3520,7 +3520,7 @@ final List<Country> countries = [
     },
     flag: '🇯🇪',
   ),
-  Country(
+  const Country(
     name: 'Jordan',
     isoCode: 'JO',
     iso3Code: 'JOR',
@@ -3551,7 +3551,7 @@ final List<Country> countries = [
     },
     flag: '🇯🇴',
   ),
-  Country(
+  const Country(
     name: 'Kazakhstan',
     isoCode: 'KZ',
     iso3Code: 'KAZ',
@@ -3582,7 +3582,7 @@ final List<Country> countries = [
     },
     flag: '🇰🇿',
   ),
-  Country(
+  const Country(
     name: 'Kenya',
     isoCode: 'KE',
     iso3Code: 'KEN',
@@ -3613,7 +3613,7 @@ final List<Country> countries = [
     },
     flag: '🇰🇪',
   ),
-  Country(
+  const Country(
     name: 'Kiribati',
     isoCode: 'KI',
     iso3Code: 'KIR',
@@ -3644,7 +3644,7 @@ final List<Country> countries = [
     },
     flag: '🇰🇮',
   ),
-  Country(
+  const Country(
     name: 'Kuwait',
     isoCode: 'KW',
     iso3Code: 'KWT',
@@ -3675,7 +3675,7 @@ final List<Country> countries = [
     },
     flag: '🇰🇼',
   ),
-  Country(
+  const Country(
     name: 'Kyrgyzstan',
     isoCode: 'KG',
     iso3Code: 'KGZ',
@@ -3706,7 +3706,7 @@ final List<Country> countries = [
     },
     flag: '🇰🇬',
   ),
-  Country(
+  const Country(
     name: "Lao People's Democratic Republic",
     isoCode: 'LA',
     iso3Code: 'LAO',
@@ -3737,7 +3737,7 @@ final List<Country> countries = [
     },
     flag: '🇱🇦',
   ),
-  Country(
+  const Country(
     name: 'Latvia',
     isoCode: 'LV',
     iso3Code: 'LVA',
@@ -3768,7 +3768,7 @@ final List<Country> countries = [
     },
     flag: '🇱🇻',
   ),
-  Country(
+  const Country(
     name: 'Lebanon',
     isoCode: 'LB',
     iso3Code: 'LBN',
@@ -3799,7 +3799,7 @@ final List<Country> countries = [
     },
     flag: '🇱🇧',
   ),
-  Country(
+  const Country(
     name: 'Lesotho',
     isoCode: 'LS',
     iso3Code: 'LSO',
@@ -3830,7 +3830,7 @@ final List<Country> countries = [
     },
     flag: '🇱🇸',
   ),
-  Country(
+  const Country(
     name: 'Liberia',
     isoCode: 'LR',
     iso3Code: 'LBR',
@@ -3861,7 +3861,7 @@ final List<Country> countries = [
     },
     flag: '🇱🇷',
   ),
-  Country(
+  const Country(
     name: 'Libya',
     isoCode: 'LY',
     iso3Code: 'LBY',
@@ -3892,7 +3892,7 @@ final List<Country> countries = [
     },
     flag: '🇱🇾',
   ),
-  Country(
+  const Country(
     name: 'Liechtenstein',
     isoCode: 'LI',
     iso3Code: 'LIE',
@@ -3923,7 +3923,7 @@ final List<Country> countries = [
     },
     flag: '🇱🇮',
   ),
-  Country(
+  const Country(
     name: 'Lithuania',
     isoCode: 'LT',
     iso3Code: 'LTU',
@@ -3954,7 +3954,7 @@ final List<Country> countries = [
     },
     flag: '🇱🇹',
   ),
-  Country(
+  const Country(
     name: 'Luxembourg',
     isoCode: 'LU',
     iso3Code: 'LUX',
@@ -3985,7 +3985,7 @@ final List<Country> countries = [
     },
     flag: '🇱🇺',
   ),
-  Country(
+  const Country(
     name: 'Macao',
     isoCode: 'MO',
     iso3Code: 'MAC',
@@ -4016,7 +4016,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇴',
   ),
-  Country(
+  const Country(
     name: 'Macedonia (the former Yugoslav Republic of)',
     isoCode: 'MK',
     iso3Code: 'MKD',
@@ -4047,7 +4047,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇰',
   ),
-  Country(
+  const Country(
     name: 'Madagascar',
     isoCode: 'MG',
     iso3Code: 'MDG',
@@ -4078,7 +4078,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇬',
   ),
-  Country(
+  const Country(
     name: 'Malawi',
     isoCode: 'MW',
     iso3Code: 'MWI',
@@ -4109,7 +4109,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇼',
   ),
-  Country(
+  const Country(
     name: 'Malaysia',
     isoCode: 'MY',
     iso3Code: 'MYS',
@@ -4140,7 +4140,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇾',
   ),
-  Country(
+  const Country(
     name: 'Maldives',
     isoCode: 'MV',
     iso3Code: 'MDV',
@@ -4171,7 +4171,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇻',
   ),
-  Country(
+  const Country(
     name: 'Mali',
     isoCode: 'ML',
     iso3Code: 'MLI',
@@ -4202,7 +4202,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇱',
   ),
-  Country(
+  const Country(
     name: 'Malta',
     isoCode: 'MT',
     iso3Code: 'MLT',
@@ -4233,7 +4233,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇹',
   ),
-  Country(
+  const Country(
     name: 'Marshall Islands',
     isoCode: 'MH',
     iso3Code: 'MHL',
@@ -4264,7 +4264,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇭',
   ),
-  Country(
+  const Country(
     name: 'Martinique',
     isoCode: 'MQ',
     iso3Code: 'MTQ',
@@ -4295,7 +4295,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇶',
   ),
-  Country(
+  const Country(
     name: 'Mauritania',
     isoCode: 'MR',
     iso3Code: 'MRT',
@@ -4326,7 +4326,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇷',
   ),
-  Country(
+  const Country(
     name: 'Mauritius',
     isoCode: 'MU',
     iso3Code: 'MUS',
@@ -4357,7 +4357,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇺',
   ),
-  Country(
+  const Country(
     name: 'Mayotte',
     isoCode: 'YT',
     iso3Code: 'MYT',
@@ -4388,7 +4388,7 @@ final List<Country> countries = [
     },
     flag: '🇾🇹',
   ),
-  Country(
+  const Country(
     name: 'Mexico',
     isoCode: 'MX',
     iso3Code: 'MEX',
@@ -4419,7 +4419,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇽',
   ),
-  Country(
+  const Country(
     name: 'Micronesia (Federated States of)',
     isoCode: 'FM',
     iso3Code: 'FSM',
@@ -4450,7 +4450,7 @@ final List<Country> countries = [
     },
     flag: '🇫🇲',
   ),
-  Country(
+  const Country(
     name: 'Moldova (Republic of)',
     isoCode: 'MD',
     iso3Code: 'MDA',
@@ -4481,7 +4481,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇩',
   ),
-  Country(
+  const Country(
     name: 'Monaco',
     isoCode: 'MC',
     iso3Code: 'MCO',
@@ -4512,7 +4512,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇨',
   ),
-  Country(
+  const Country(
     name: 'Mongolia',
     isoCode: 'MN',
     iso3Code: 'MNG',
@@ -4543,7 +4543,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇳',
   ),
-  Country(
+  const Country(
     name: 'Montenegro',
     isoCode: 'ME',
     iso3Code: 'MNE',
@@ -4574,7 +4574,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇪',
   ),
-  Country(
+  const Country(
     name: 'Montserrat',
     isoCode: 'MS',
     iso3Code: 'MSR',
@@ -4605,7 +4605,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇸',
   ),
-  Country(
+  const Country(
     name: 'Morocco',
     isoCode: 'MA',
     iso3Code: 'MAR',
@@ -4636,7 +4636,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇦',
   ),
-  Country(
+  const Country(
     name: 'Mozambique',
     isoCode: 'MZ',
     iso3Code: 'MOZ',
@@ -4667,7 +4667,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇿',
   ),
-  Country(
+  const Country(
     name: 'Myanmar',
     isoCode: 'MM',
     iso3Code: 'MMR',
@@ -4698,7 +4698,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇲',
   ),
-  Country(
+  const Country(
     name: 'Namibia',
     isoCode: 'NA',
     iso3Code: 'NAM',
@@ -4729,7 +4729,7 @@ final List<Country> countries = [
     },
     flag: '🇳🇦',
   ),
-  Country(
+  const Country(
     name: 'Nauru',
     isoCode: 'NR',
     iso3Code: 'NRU',
@@ -4760,7 +4760,7 @@ final List<Country> countries = [
     },
     flag: '🇳🇷',
   ),
-  Country(
+  const Country(
     name: 'Nepal',
     isoCode: 'NP',
     iso3Code: 'NPL',
@@ -4791,7 +4791,7 @@ final List<Country> countries = [
     },
     flag: '🇳🇵',
   ),
-  Country(
+  const Country(
     name: 'Netherlands',
     isoCode: 'NL',
     iso3Code: 'NLD',
@@ -4822,7 +4822,7 @@ final List<Country> countries = [
     },
     flag: '🇳🇱',
   ),
-  Country(
+  const Country(
     name: 'New Caledonia',
     isoCode: 'NC',
     iso3Code: 'NCL',
@@ -4853,7 +4853,7 @@ final List<Country> countries = [
     },
     flag: '🇳🇨',
   ),
-  Country(
+  const Country(
     name: 'New Zealand',
     isoCode: 'NZ',
     iso3Code: 'NZL',
@@ -4884,7 +4884,7 @@ final List<Country> countries = [
     },
     flag: '🇳🇿',
   ),
-  Country(
+  const Country(
     name: 'Nicaragua',
     isoCode: 'NI',
     iso3Code: 'NIC',
@@ -4915,7 +4915,7 @@ final List<Country> countries = [
     },
     flag: '🇳🇮',
   ),
-  Country(
+  const Country(
     name: 'Niger',
     isoCode: 'NE',
     iso3Code: 'NER',
@@ -4946,7 +4946,7 @@ final List<Country> countries = [
     },
     flag: '🇳🇪',
   ),
-  Country(
+  const Country(
     name: 'Nigeria',
     isoCode: 'NG',
     iso3Code: 'NGA',
@@ -4977,7 +4977,7 @@ final List<Country> countries = [
     },
     flag: '🇳🇬',
   ),
-  Country(
+  const Country(
     name: 'Niue',
     isoCode: 'NU',
     iso3Code: 'NIU',
@@ -5008,7 +5008,7 @@ final List<Country> countries = [
     },
     flag: '🇳🇺',
   ),
-  Country(
+  const Country(
     name: 'Norfolk Island',
     isoCode: 'NF',
     iso3Code: 'NFK',
@@ -5039,7 +5039,7 @@ final List<Country> countries = [
     },
     flag: '🇳🇫',
   ),
-  Country(
+  const Country(
     name: "Korea (Democratic People's Republic of)",
     isoCode: 'KP',
     iso3Code: 'PRK',
@@ -5070,7 +5070,7 @@ final List<Country> countries = [
     },
     flag: '🇰🇵',
   ),
-  Country(
+  const Country(
     name: 'Northern Mariana Islands',
     isoCode: 'MP',
     iso3Code: 'MNP',
@@ -5101,7 +5101,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇵',
   ),
-  Country(
+  const Country(
     name: 'Norway',
     isoCode: 'NO',
     iso3Code: 'NOR',
@@ -5132,7 +5132,7 @@ final List<Country> countries = [
     },
     flag: '🇳🇴',
   ),
-  Country(
+  const Country(
     name: 'Oman',
     isoCode: 'OM',
     iso3Code: 'OMN',
@@ -5163,7 +5163,7 @@ final List<Country> countries = [
     },
     flag: '🇴🇲',
   ),
-  Country(
+  const Country(
     name: 'Pakistan',
     isoCode: 'PK',
     iso3Code: 'PAK',
@@ -5194,7 +5194,7 @@ final List<Country> countries = [
     },
     flag: '🇵🇰',
   ),
-  Country(
+  const Country(
     name: 'Palau',
     isoCode: 'PW',
     iso3Code: 'PLW',
@@ -5225,7 +5225,7 @@ final List<Country> countries = [
     },
     flag: '🇵🇼',
   ),
-  Country(
+  const Country(
     name: 'Palestine, State of',
     isoCode: 'PS',
     iso3Code: 'PSE',
@@ -5256,7 +5256,7 @@ final List<Country> countries = [
     },
     flag: '🇵🇸',
   ),
-  Country(
+  const Country(
     name: 'Panama',
     isoCode: 'PA',
     iso3Code: 'PAN',
@@ -5287,7 +5287,7 @@ final List<Country> countries = [
     },
     flag: '🇵🇦',
   ),
-  Country(
+  const Country(
     name: 'Papua New Guinea',
     isoCode: 'PG',
     iso3Code: 'PNG',
@@ -5318,7 +5318,7 @@ final List<Country> countries = [
     },
     flag: '🇵🇬',
   ),
-  Country(
+  const Country(
     name: 'Paraguay',
     isoCode: 'PY',
     iso3Code: 'PRY',
@@ -5349,7 +5349,7 @@ final List<Country> countries = [
     },
     flag: '🇵🇾',
   ),
-  Country(
+  const Country(
     name: 'Peru',
     isoCode: 'PE',
     iso3Code: 'PER',
@@ -5380,7 +5380,7 @@ final List<Country> countries = [
     },
     flag: '🇵🇪',
   ),
-  Country(
+  const Country(
     name: 'Philippines',
     isoCode: 'PH',
     iso3Code: 'PHL',
@@ -5411,7 +5411,7 @@ final List<Country> countries = [
     },
     flag: '🇵🇭',
   ),
-  Country(
+  const Country(
     name: 'Pitcairn',
     isoCode: 'PN',
     iso3Code: 'PCN',
@@ -5442,7 +5442,7 @@ final List<Country> countries = [
     },
     flag: '🇵🇳',
   ),
-  Country(
+  const Country(
     name: 'Poland',
     isoCode: 'PL',
     iso3Code: 'POL',
@@ -5473,7 +5473,7 @@ final List<Country> countries = [
     },
     flag: '🇵🇱',
   ),
-  Country(
+  const Country(
     name: 'Portugal',
     isoCode: 'PT',
     iso3Code: 'PRT',
@@ -5504,7 +5504,7 @@ final List<Country> countries = [
     },
     flag: '🇵🇹',
   ),
-  Country(
+  const Country(
     name: 'Puerto Rico',
     isoCode: 'PR',
     iso3Code: 'PRI',
@@ -5535,7 +5535,7 @@ final List<Country> countries = [
     },
     flag: '🇵🇷',
   ),
-  Country(
+  const Country(
     name: 'Qatar',
     isoCode: 'QA',
     iso3Code: 'QAT',
@@ -5566,7 +5566,7 @@ final List<Country> countries = [
     },
     flag: '🇶🇦',
   ),
-  Country(
+  const Country(
     name: 'Réunion',
     isoCode: 'RE',
     iso3Code: 'REU',
@@ -5597,7 +5597,7 @@ final List<Country> countries = [
     },
     flag: '🇷🇪',
   ),
-  Country(
+  const Country(
     name: 'Romania',
     isoCode: 'RO',
     iso3Code: 'ROU',
@@ -5628,7 +5628,7 @@ final List<Country> countries = [
     },
     flag: '🇷🇴',
   ),
-  Country(
+  const Country(
     name: 'Russian Federation',
     isoCode: 'RU',
     iso3Code: 'RUS',
@@ -5659,7 +5659,7 @@ final List<Country> countries = [
     },
     flag: '🇷🇺',
   ),
-  Country(
+  const Country(
     name: 'Rwanda',
     isoCode: 'RW',
     iso3Code: 'RWA',
@@ -5690,7 +5690,7 @@ final List<Country> countries = [
     },
     flag: '🇷🇼',
   ),
-  Country(
+  const Country(
     name: 'Saint Barthélemy',
     isoCode: 'BL',
     iso3Code: 'BLM',
@@ -5721,7 +5721,7 @@ final List<Country> countries = [
     },
     flag: '🇧🇱',
   ),
-  Country(
+  const Country(
     name: 'Saint Helena, Ascension and Tristan da Cunha',
     isoCode: 'SH',
     iso3Code: 'SHN',
@@ -5752,7 +5752,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇭',
   ),
-  Country(
+  const Country(
     name: 'Saint Kitts and Nevis',
     isoCode: 'KN',
     iso3Code: 'KNA',
@@ -5783,7 +5783,7 @@ final List<Country> countries = [
     },
     flag: '🇰🇳',
   ),
-  Country(
+  const Country(
     name: 'Saint Lucia',
     isoCode: 'LC',
     iso3Code: 'LCA',
@@ -5814,7 +5814,7 @@ final List<Country> countries = [
     },
     flag: '🇱🇨',
   ),
-  Country(
+  const Country(
     name: 'Saint Martin (French part)',
     isoCode: 'MF',
     iso3Code: 'MAF',
@@ -5845,7 +5845,7 @@ final List<Country> countries = [
     },
     flag: '🇲🇫',
   ),
-  Country(
+  const Country(
     name: 'Saint Pierre and Miquelon',
     isoCode: 'PM',
     iso3Code: 'SPM',
@@ -5876,7 +5876,7 @@ final List<Country> countries = [
     },
     flag: '🇵🇲',
   ),
-  Country(
+  const Country(
     name: 'Saint Vincent and the Grenadines',
     isoCode: 'VC',
     iso3Code: 'VCT',
@@ -5907,7 +5907,7 @@ final List<Country> countries = [
     },
     flag: '🇻🇨',
   ),
-  Country(
+  const Country(
     name: 'Samoa',
     isoCode: 'WS',
     iso3Code: 'WSM',
@@ -5938,7 +5938,7 @@ final List<Country> countries = [
     },
     flag: '🇼🇸',
   ),
-  Country(
+  const Country(
     name: 'San Marino',
     isoCode: 'SM',
     iso3Code: 'SMR',
@@ -5969,7 +5969,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇲',
   ),
-  Country(
+  const Country(
     name: 'Sao Tome and Principe',
     isoCode: 'ST',
     iso3Code: 'STP',
@@ -6000,7 +6000,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇹',
   ),
-  Country(
+  const Country(
     name: 'Saudi Arabia',
     isoCode: 'SA',
     iso3Code: 'SAU',
@@ -6031,7 +6031,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇦',
   ),
-  Country(
+  const Country(
     name: 'Senegal',
     isoCode: 'SN',
     iso3Code: 'SEN',
@@ -6062,7 +6062,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇳',
   ),
-  Country(
+  const Country(
     name: 'Serbia',
     isoCode: 'RS',
     iso3Code: 'SRB',
@@ -6093,7 +6093,7 @@ final List<Country> countries = [
     },
     flag: '🇷🇸',
   ),
-  Country(
+  const Country(
     name: 'Seychelles',
     isoCode: 'SC',
     iso3Code: 'SYC',
@@ -6124,7 +6124,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇨',
   ),
-  Country(
+  const Country(
     name: 'Sierra Leone',
     isoCode: 'SL',
     iso3Code: 'SLE',
@@ -6155,7 +6155,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇱',
   ),
-  Country(
+  const Country(
     name: 'Singapore',
     isoCode: 'SG',
     iso3Code: 'SGP',
@@ -6186,7 +6186,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇬',
   ),
-  Country(
+  const Country(
     name: 'Slovakia',
     isoCode: 'SK',
     iso3Code: 'SVK',
@@ -6217,7 +6217,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇰',
   ),
-  Country(
+  const Country(
     name: 'Slovenia',
     isoCode: 'SI',
     iso3Code: 'SVN',
@@ -6248,7 +6248,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇮',
   ),
-  Country(
+  const Country(
     name: 'Solomon Islands',
     isoCode: 'SB',
     iso3Code: 'SLB',
@@ -6279,7 +6279,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇧',
   ),
-  Country(
+  const Country(
     name: 'Somalia',
     isoCode: 'SO',
     iso3Code: 'SOM',
@@ -6310,7 +6310,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇴',
   ),
-  Country(
+  const Country(
     name: 'South Africa',
     isoCode: 'ZA',
     iso3Code: 'ZAF',
@@ -6341,7 +6341,7 @@ final List<Country> countries = [
     },
     flag: '🇿🇦',
   ),
-  Country(
+  const Country(
     name: 'South Georgia and the South Sandwich Islands',
     isoCode: 'GS',
     iso3Code: 'SGS',
@@ -6372,7 +6372,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇸',
   ),
-  Country(
+  const Country(
     name: 'Korea (Republic of)',
     isoCode: 'KR',
     iso3Code: 'KOR',
@@ -6403,7 +6403,7 @@ final List<Country> countries = [
     },
     flag: '🇰🇷',
   ),
-  Country(
+  const Country(
     name: 'South Sudan',
     isoCode: 'SS',
     iso3Code: 'SSD',
@@ -6434,7 +6434,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇸',
   ),
-  Country(
+  const Country(
     name: 'Spain',
     isoCode: 'ES',
     iso3Code: 'ESP',
@@ -6465,7 +6465,7 @@ final List<Country> countries = [
     },
     flag: '🇪🇸',
   ),
-  Country(
+  const Country(
     name: 'Sri Lanka',
     isoCode: 'LK',
     iso3Code: 'LKA',
@@ -6496,7 +6496,7 @@ final List<Country> countries = [
     },
     flag: '🇱🇰',
   ),
-  Country(
+  const Country(
     name: 'Sudan',
     isoCode: 'SD',
     iso3Code: 'SDN',
@@ -6527,7 +6527,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇩',
   ),
-  Country(
+  const Country(
     name: 'Suriname',
     isoCode: 'SR',
     iso3Code: 'SUR',
@@ -6558,7 +6558,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇷',
   ),
-  Country(
+  const Country(
     name: 'Svalbard and Jan Mayen',
     isoCode: 'SJ',
     iso3Code: 'SJM',
@@ -6589,7 +6589,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇯',
   ),
-  Country(
+  const Country(
     name: 'Swaziland',
     isoCode: 'SZ',
     iso3Code: 'SWZ',
@@ -6620,7 +6620,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇿',
   ),
-  Country(
+  const Country(
     name: 'Sweden',
     isoCode: 'SE',
     iso3Code: 'SWE',
@@ -6651,7 +6651,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇪',
   ),
-  Country(
+  const Country(
     name: 'Switzerland',
     isoCode: 'CH',
     iso3Code: 'CHE',
@@ -6682,7 +6682,7 @@ final List<Country> countries = [
     },
     flag: '🇨🇭',
   ),
-  Country(
+  const Country(
     name: 'Syrian Arab Republic',
     isoCode: 'SY',
     iso3Code: 'SYR',
@@ -6713,7 +6713,7 @@ final List<Country> countries = [
     },
     flag: '🇸🇾',
   ),
-  Country(
+  const Country(
     name: 'Taiwan',
     isoCode: 'TW',
     iso3Code: 'TWN',
@@ -6744,7 +6744,7 @@ final List<Country> countries = [
     },
     flag: '🇹🇼',
   ),
-  Country(
+  const Country(
     name: 'Tajikistan',
     isoCode: 'TJ',
     iso3Code: 'TJK',
@@ -6775,7 +6775,7 @@ final List<Country> countries = [
     },
     flag: '🇹🇯',
   ),
-  Country(
+  const Country(
     name: 'Tanzania, United Republic of',
     isoCode: 'TZ',
     iso3Code: 'TZA',
@@ -6806,7 +6806,7 @@ final List<Country> countries = [
     },
     flag: '🇹🇿',
   ),
-  Country(
+  const Country(
     name: 'Thailand',
     isoCode: 'TH',
     iso3Code: 'THA',
@@ -6837,7 +6837,7 @@ final List<Country> countries = [
     },
     flag: '🇹🇭',
   ),
-  Country(
+  const Country(
     name: 'Timor-Leste',
     isoCode: 'TL',
     iso3Code: 'TLS',
@@ -6868,7 +6868,7 @@ final List<Country> countries = [
     },
     flag: '🇹🇱',
   ),
-  Country(
+  const Country(
     name: 'Togo',
     isoCode: 'TG',
     iso3Code: 'TGO',
@@ -6899,7 +6899,7 @@ final List<Country> countries = [
     },
     flag: '🇹🇬',
   ),
-  Country(
+  const Country(
     name: 'Tokelau',
     isoCode: 'TK',
     iso3Code: 'TKL',
@@ -6930,7 +6930,7 @@ final List<Country> countries = [
     },
     flag: '🇹🇰',
   ),
-  Country(
+  const Country(
     name: 'Tonga',
     isoCode: 'TO',
     iso3Code: 'TON',
@@ -6961,7 +6961,7 @@ final List<Country> countries = [
     },
     flag: '🇹🇴',
   ),
-  Country(
+  const Country(
     name: 'Trinidad and Tobago',
     isoCode: 'TT',
     iso3Code: 'TTO',
@@ -6992,7 +6992,7 @@ final List<Country> countries = [
     },
     flag: '🇹🇹',
   ),
-  Country(
+  const Country(
     name: 'Tunisia',
     isoCode: 'TN',
     iso3Code: 'TUN',
@@ -7023,7 +7023,7 @@ final List<Country> countries = [
     },
     flag: '🇹🇳',
   ),
-  Country(
+  const Country(
     name: 'Turkey',
     isoCode: 'TR',
     iso3Code: 'TUR',
@@ -7054,7 +7054,7 @@ final List<Country> countries = [
     },
     flag: '🇹🇷',
   ),
-  Country(
+  const Country(
     name: 'Turkmenistan',
     isoCode: 'TM',
     iso3Code: 'TKM',
@@ -7085,7 +7085,7 @@ final List<Country> countries = [
     },
     flag: '🇹🇲',
   ),
-  Country(
+  const Country(
     name: 'Turks and Caicos Islands',
     isoCode: 'TC',
     iso3Code: 'TCA',
@@ -7116,7 +7116,7 @@ final List<Country> countries = [
     },
     flag: '🇹🇨',
   ),
-  Country(
+  const Country(
     name: 'Tuvalu',
     isoCode: 'TV',
     iso3Code: 'TUV',
@@ -7147,7 +7147,7 @@ final List<Country> countries = [
     },
     flag: '🇹🇻',
   ),
-  Country(
+  const Country(
     name: 'Uganda',
     isoCode: 'UG',
     iso3Code: 'UGA',
@@ -7178,7 +7178,7 @@ final List<Country> countries = [
     },
     flag: '🇺🇬',
   ),
-  Country(
+  const Country(
     name: 'Ukraine',
     isoCode: 'UA',
     iso3Code: 'UKR',
@@ -7209,7 +7209,7 @@ final List<Country> countries = [
     },
     flag: '🇺🇦',
   ),
-  Country(
+  const Country(
     name: 'United Arab Emirates',
     isoCode: 'AE',
     iso3Code: 'ARE',
@@ -7240,7 +7240,7 @@ final List<Country> countries = [
     },
     flag: '🇦🇪',
   ),
-  Country(
+  const Country(
     name: 'United Kingdom of Great Britain and Northern Ireland',
     isoCode: 'GB',
     iso3Code: 'GBR',
@@ -7271,7 +7271,7 @@ final List<Country> countries = [
     },
     flag: '🇬🇧',
   ),
-  Country(
+  const Country(
     name: 'United States of America',
     isoCode: 'US',
     iso3Code: 'USA',
@@ -7302,7 +7302,7 @@ final List<Country> countries = [
     },
     flag: '🇺🇸',
   ),
-  Country(
+  const Country(
     name: 'Uruguay',
     isoCode: 'UY',
     iso3Code: 'URY',
@@ -7333,7 +7333,7 @@ final List<Country> countries = [
     },
     flag: '🇺🇾',
   ),
-  Country(
+  const Country(
     name: 'Uzbekistan',
     isoCode: 'UZ',
     iso3Code: 'UZB',
@@ -7364,7 +7364,7 @@ final List<Country> countries = [
     },
     flag: '🇺🇿',
   ),
-  Country(
+  const Country(
     name: 'Vanuatu',
     isoCode: 'VU',
     iso3Code: 'VUT',
@@ -7395,7 +7395,7 @@ final List<Country> countries = [
     },
     flag: '🇻🇺',
   ),
-  Country(
+  const Country(
     name: 'Venezuela (Bolivarian Republic of)',
     isoCode: 'VE',
     iso3Code: 'VEN',
@@ -7426,7 +7426,7 @@ final List<Country> countries = [
     },
     flag: '🇻🇪',
   ),
-  Country(
+  const Country(
     name: 'Viet Nam',
     isoCode: 'VN',
     iso3Code: 'VNM',
@@ -7457,7 +7457,7 @@ final List<Country> countries = [
     },
     flag: '🇻🇳',
   ),
-  Country(
+  const Country(
     name: 'Wallis and Futuna',
     isoCode: 'WF',
     iso3Code: 'WLF',
@@ -7488,7 +7488,7 @@ final List<Country> countries = [
     },
     flag: '🇼🇫',
   ),
-  Country(
+  const Country(
     name: 'Yemen',
     isoCode: 'YE',
     iso3Code: 'YEM',
@@ -7519,7 +7519,7 @@ final List<Country> countries = [
     },
     flag: '🇾🇪',
   ),
-  Country(
+  const Country(
     name: 'Zambia',
     isoCode: 'ZM',
     iso3Code: 'ZMB',
@@ -7550,7 +7550,7 @@ final List<Country> countries = [
     },
     flag: '🇿🇲',
   ),
-  Country(
+  const Country(
     name: 'Zimbabwe',
     isoCode: 'ZW',
     iso3Code: 'ZWE',

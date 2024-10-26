@@ -4,8 +4,10 @@ import 'package:local_fx/src/features/common/application/preference/preference_b
 import 'package:local_fx/src/features/common/domain/assets.dart';
 import 'package:local_fx/src/features/common/domain/enums/enums.dart';
 import 'package:local_fx/src/features/common/presentation/styles.dart';
+import 'package:local_fx/src/features/settings/presentation/widgets/custom_dropdown_button.dart';
 import 'package:local_fx/src/features/settings/presentation/widgets/settings_list_tile.dart';
 import 'package:local_fx/src/localization/generated/l10n.dart';
+import 'package:local_fx/src/utils/enum_utils.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -74,6 +76,23 @@ class SettingsPage extends StatelessWidget {
                             : null,
                       ),
                     ),
+                  ),
+                ),
+                BlocBuilder<PreferenceBloc, PreferenceState>(
+                  builder: (ctx, state) =>
+                      CustomDropdownButton<AppLanguageType>(
+                    hint: s.chooseLanguage,
+                    currentValue: state.currentLanguage,
+                    values:
+                        EnumUtils.getTranslatedAndSortedEnum<AppLanguageType>(
+                      AppLanguageType.values,
+                      (val, _) => val.translate,
+                    ),
+                    onChanged: (newValue, _) {
+                      context
+                          .read<PreferenceBloc>()
+                          .add(PreferenceLanguageChanged(newValue: newValue));
+                    },
                   ),
                 ),
               ],

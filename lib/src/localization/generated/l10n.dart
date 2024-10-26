@@ -130,6 +130,16 @@ class S {
     );
   }
 
+  /// `Choose a language`
+  String get chooseLanguage {
+    return Intl.message(
+      'Choose a language',
+      name: 'chooseLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Sync with device theme`
   String get syncWithDeviceTheme {
     return Intl.message(

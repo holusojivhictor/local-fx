@@ -42,16 +42,19 @@ class _HomePageState extends State<HomePage> {
                   return BlocBuilder<AppBloc, AppState>(
                     builder: (_, appState) {
                       return CountrySelection(
-                        key: ValueKey(state.country.isoCode),
+                        key: ValueKey(
+                          '${state.country.isoCode}${state.currencyPairs.length}',
+                        ),
                         languageCode: appState.language.code,
                         initialCountryCode: state.country.isoCode,
                         dropdownDecoration: const BoxDecoration(
                           borderRadius: Styles.smallBorderRadius,
                         ),
                         onCountryChanged: (country) {
-                          context
-                              .read<HomeCubit>()
-                              .refreshLocalRates(country.currencyCode);
+                          context.read<HomeCubit>().refreshLocalRates(
+                                code: country.currencyCode,
+                                silent: false,
+                              );
                         },
                         selectionDialogStyle: SelectionDialogStyle(
                           searchFieldInputDecoration: Styles.appInputDecoration(

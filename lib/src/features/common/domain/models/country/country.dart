@@ -1,5 +1,7 @@
-class Country {
-  Country({
+import 'package:equatable/equatable.dart';
+
+class Country extends Equatable {
+  const Country({
     required this.name,
     required this.isoCode,
     required this.iso3Code,
@@ -32,4 +34,15 @@ class Country {
   String localizedName(String languageCode) {
     return nameTranslations[languageCode] ?? name;
   }
+
+  @override
+  List<Object?> get props => <Object?>[
+    name,
+    isoCode,
+    iso3Code,
+    currencyCode,
+    currencyName,
+    flag,
+    nameTranslations,
+  ];
 }

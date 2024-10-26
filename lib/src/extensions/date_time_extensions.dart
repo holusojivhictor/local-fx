@@ -7,6 +7,14 @@ String get yesterday {
 extension DateTimeExtensions on DateTime {
   DateTime get now => DateTime.now();
 
+  String get prettyTime {
+    return DateFormat('h:mm a').format(this);
+  }
+
+  String get prettyUTC {
+    return toUtc().prettyTime;
+  }
+
   String get basic {
     return DateFormat('yyyy-MM-dd').format(this);
   }

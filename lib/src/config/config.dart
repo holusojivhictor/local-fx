@@ -7,7 +7,7 @@ class Config {
 
   static final Config _singleton = Config._internal();
 
-  static final String exchangeRatesApiKey = Env.exchangeRatesApiKey;
+  static final String fastForexApiKey = Env.fastForexApiKey;
 
-  static final String fixerApiKey = Env.fixerApiKey;
+  static final String currencyBeaconApiKey = Env.currencyBeaconApiKey;
 }

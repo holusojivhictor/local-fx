@@ -4,9 +4,9 @@ part 'env.g.dart';
 
 @Envied(path: '.env')
 abstract class Env {
-  @EnviedField(varName: 'EXCHANGE_RATES_API_KEY', obfuscate: true)
-  static final String exchangeRatesApiKey = _Env.exchangeRatesApiKey;
+  @EnviedField(varName: 'FAST_FOREX_API_KEY', obfuscate: true)
+  static final String fastForexApiKey = _Env.fastForexApiKey;
 
-  @EnviedField(varName: 'FIXER_API_KEY', obfuscate: true)
-  static final String fixerApiKey = _Env.fixerApiKey;
+  @EnviedField(varName: 'CURRENCY_BEACON_API_KEY', obfuscate: true)
+  static final String currencyBeaconApiKey = _Env.currencyBeaconApiKey;
 }

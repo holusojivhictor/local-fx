@@ -3,12 +3,10 @@ enum AppThemeType {
   dark;
 
   bool get darkMode {
-    switch (this) {
-      case AppThemeType.light:
-        return false;
-      case AppThemeType.dark:
-        return true;
-    }
+    return switch (this) {
+      AppThemeType.light => false,
+      AppThemeType.dark => true,
+    };
   }
 
   static AppThemeType translate({required bool value}) {
