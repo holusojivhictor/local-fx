@@ -8,6 +8,11 @@ class LocaleService {
 
   final PreferenceService _preferenceService;
 
+  String getFormattedLocale(AppLanguageType language) {
+    final locale = getLocale(language);
+    return '${locale.code}_${locale.countryCode}';
+  }
+
   Language getLocaleWithoutLang() {
     return getLocale(_preferenceService.language);
   }
