@@ -10,62 +10,55 @@ class PriceChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final values = candlesticks.map((e) => e.low).toList()
-      ..addAll(candlesticks.map((e) => e.close))
-      ..addAll(candlesticks.map((e) => e.open))
-      ..addAll(candlesticks.map((e) => e.high));
-    final min = values.min;
-    final max = values.max;
+    final values =
+        candlesticks.expand((e) => [e.low, e.close, e.open, e.high]).toList();
 
     return SizedBox(
       height: 500,
       child: Chart<Candlestick>(
-        data: candlesticks.reversed.toList(),
+        rebuild: false,
+        data: candlesticks,
         variables: {
           'datetime': Variable(
             accessor: (Candlestick datum) =>
                 '${datum.datetime.chartDay} ${datum.datetime.chartTime}',
-            scale: OrdinalScale(tickCount: 4),
-          ),
-          'open': Variable(
-            accessor: (Candlestick datum) => datum.open as num,
-            scale: LinearScale(min: min, max: max),
-          ),
-          'high': Variable(
-            accessor: (Candlestick datum) => datum.high as num,
-            scale: LinearScale(min: min, max: max),
-          ),
-          'low': Variable(
-            accessor: (Candlestick datum) => datum.low as num,
-            scale: LinearScale(min: min, max: max),
+            scale: OrdinalScale(tickCount: 3),
           ),
           'close': Variable(
             accessor: (Candlestick datum) => datum.close as num,
-            scale: LinearScale(min: min, max: max),
+            scale: LinearScale(min: values.min, tickCount: 5),
           ),
         },
         marks: [
-          CustomMark(
-            shape: ShapeEncode(value: CandlestickShape()),
-            position: Varset('datetime') *
-                (Varset('open') +
-                    Varset('high') +
-                    Varset('low') +
-                    Varset('close')),
-            color: ColorEncode(
-              encoder: (tuple) =>
-                  (tuple['close'] as num) >= (tuple['open'] as num)
-                      ? Colors.red
-                      : Colors.green,
-            ),
+          LineMark(
+            size: SizeEncode(value: 1),
           ),
         ],
         axes: [
-          Defaults.horizontalAxis,
-          Defaults.verticalAxis,
+          Defaults.horizontalAxis
+            ..line = null,
+          Defaults.verticalAxis
+            ..gridMapper =
+                (_, index, __) => index == 0 ? null : Defaults.strokeStyle,
         ],
-        coord: RectCoord(
-          horizontalRangeUpdater: Defaults.horizontalRangeEvent,
+        selections: {
+          'touchMove': PointSelection(
+            on: {
+              GestureType.scaleUpdate,
+              GestureType.tapDown,
+              GestureType.longPressMoveUpdate,
+            },
+            dim: Dim.x,
+          ),
+        },
+        crosshair: CrosshairGuide(
+          labelPaddings: [0.0, 0.0],
+          showLabel: [true, true],
+          followPointer: [false, false],
+          styles: [
+            PaintStyle(strokeColor: Colors.black),
+            PaintStyle(strokeColor: Colors.black),
+          ],
         ),
       ),
     );

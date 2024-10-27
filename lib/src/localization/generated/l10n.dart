@@ -200,6 +200,16 @@ class S {
     );
   }
 
+  /// `Viewing daily changes for:`
+  String get viewingDailyChangesFor {
+    return Intl.message(
+      'Viewing daily changes for:',
+      name: 'viewingDailyChangesFor',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `We show you currency pairs relevant to your locale.`
   String get explanationOne {
     return Intl.message(

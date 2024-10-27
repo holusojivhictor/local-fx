@@ -40,8 +40,8 @@ class PairInfoCubit extends Cubit<PairInfoState> {
     try {
       final candlesticks = await _twelveDataService.getTimeSeriesData(
         symbol: state.pair,
-        interval: PointInterval.fifteenMins,
-        outputSize: '50',
+        interval: PointInterval.oneDay,
+        outputSize: '200',
       );
 
       emit(

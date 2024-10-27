@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:local_fx/src/extensions/extensions.dart';
+import 'package:local_fx/src/extensions/num_extensions.dart';
 import 'package:local_fx/src/features/common/presentation/styles.dart';
 import 'package:local_fx/src/features/pair_info/domain/models/quote.dart';
 import 'package:local_fx/src/localization/generated/l10n.dart';
@@ -25,13 +26,18 @@ class QuoteDataCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                if (quote?.name != null)
+                if (quote?.name != null) ...[
+                  Text(
+                    s.viewingDailyChangesFor,
+                    style: theme.textTheme.bodySmall,
+                  ),
                   Text(
                     quote!.name,
                     style: theme.textTheme.bodyLarge?.copyWith(
                       fontWeight: FontWeight.w500,
                     ),
                   ),
+                ],
                 if (quote?.date != null)
                   Text(
                     quote!.date.fullUS,
@@ -47,7 +53,8 @@ class QuoteDataCard extends StatelessWidget {
                               : '+',
                         ),
                         TextSpan(
-                          text: double.parse(quote!.change).toStringAsFixed(2),
+                          text: double.parse(quote!.change)
+                              .toStringWoutPadding(4),
                         ),
                         const TextSpan(text: '%'),
                       ],

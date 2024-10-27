@@ -44,6 +44,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "searchCountry": MessageLookupByLibrary.simpleMessage("Search Country"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "syncWithDeviceTheme":
-            MessageLookupByLibrary.simpleMessage("Sync with device theme")
+            MessageLookupByLibrary.simpleMessage("Sync with device theme"),
+        "viewingDailyChangesFor":
+            MessageLookupByLibrary.simpleMessage("Viewing daily changes for:")
       };
 }
