@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:local_fx/src/extensions/date_time_extensions.dart';
 import 'package:local_fx/src/extensions/num_extensions.dart';
-import 'package:local_fx/src/features/home/domain/models/exchange_rates/exchange_rates.dart';
+import 'package:local_fx/src/features/home/domain/models/exchange_rates.dart';
 import 'package:local_fx/src/features/home/presentation/widgets/change_tag.dart';
 
 class CurrencyPairTile extends StatelessWidget {

@@ -22,6 +22,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "areListedBelow":
+            MessageLookupByLibrary.simpleMessage("are listed below"),
+        "availableCurrencyPairs": MessageLookupByLibrary.simpleMessage(
+            "The available currency pairs"),
         "change": MessageLookupByLibrary.simpleMessage("Change"),
         "chooseLanguage":
             MessageLookupByLibrary.simpleMessage("Choose a language"),
@@ -36,16 +40,25 @@ class MessageLookup extends MessageLookupByLibrary {
             "You can switch the locale by tapping on the flag area at the top left corner."),
         "explanationTwo": MessageLookupByLibrary.simpleMessage(
             "We decide your locale based on your current location if you have permissions on."),
+        "failedQuoteAndPriceFetch": MessageLookupByLibrary.simpleMessage(
+            "Quote and price data are currently unavailable"),
+        "forString": MessageLookupByLibrary.simpleMessage("For"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "information": MessageLookupByLibrary.simpleMessage("Information"),
         "light": MessageLookupByLibrary.simpleMessage("Light"),
+        "noPairFound": MessageLookupByLibrary.simpleMessage(
+            "None found. Please switch to a different currency."),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "open": MessageLookupByLibrary.simpleMessage("Open"),
         "searchCountry": MessageLookupByLibrary.simpleMessage("Search Country"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "syncWithDeviceTheme":
             MessageLookupByLibrary.simpleMessage("Sync with device theme"),
+        "viewDataForListedSymbols":
+            MessageLookupByLibrary.simpleMessage("We provide chart data for "),
         "viewingDailyChangesFor":
-            MessageLookupByLibrary.simpleMessage("Viewing daily changes for:")
+            MessageLookupByLibrary.simpleMessage("Viewing daily changes for:"),
+        "weProvideTrendDataForPairs": MessageLookupByLibrary.simpleMessage(
+            "We provide up-to-date trend data for forex pairs across a wide range of currencies, including USD, EUR, and many others.")
       };
 }

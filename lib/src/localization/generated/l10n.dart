@@ -120,6 +120,16 @@ class S {
     );
   }
 
+  /// `For`
+  String get forString {
+    return Intl.message(
+      'For',
+      name: 'forString',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `24h Low`
   String get dailyLow {
     return Intl.message(
@@ -190,6 +200,16 @@ class S {
     );
   }
 
+  /// `are listed below`
+  String get areListedBelow {
+    return Intl.message(
+      'are listed below',
+      name: 'areListedBelow',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Sync with device theme`
   String get syncWithDeviceTheme {
     return Intl.message(
@@ -205,6 +225,56 @@ class S {
     return Intl.message(
       'Viewing daily changes for:',
       name: 'viewingDailyChangesFor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The available currency pairs`
+  String get availableCurrencyPairs {
+    return Intl.message(
+      'The available currency pairs',
+      name: 'availableCurrencyPairs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We provide chart data for `
+  String get viewDataForListedSymbols {
+    return Intl.message(
+      'We provide chart data for ',
+      name: 'viewDataForListedSymbols',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quote and price data are currently unavailable`
+  String get failedQuoteAndPriceFetch {
+    return Intl.message(
+      'Quote and price data are currently unavailable',
+      name: 'failedQuoteAndPriceFetch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `None found. Please switch to a different currency.`
+  String get noPairFound {
+    return Intl.message(
+      'None found. Please switch to a different currency.',
+      name: 'noPairFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We provide up-to-date trend data for forex pairs across a wide range of currencies, including USD, EUR, and many others.`
+  String get weProvideTrendDataForPairs {
+    return Intl.message(
+      'We provide up-to-date trend data for forex pairs across a wide range of currencies, including USD, EUR, and many others.',
+      name: 'weProvideTrendDataForPairs',
       desc: '',
       args: [],
     );

@@ -17,7 +17,7 @@ class PriceChart extends StatelessWidget {
       height: 500,
       child: Chart<Candlestick>(
         rebuild: false,
-        data: candlesticks,
+        data: candlesticks.reversed.toList(),
         variables: {
           'datetime': Variable(
             accessor: (Candlestick datum) =>

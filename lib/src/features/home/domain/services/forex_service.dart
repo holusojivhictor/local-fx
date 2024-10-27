@@ -1,6 +1,6 @@
 import 'package:local_fx/src/extensions/date_time_extensions.dart';
 import 'package:local_fx/src/features/common/domain/models/exception/app_exception.dart';
-import 'package:local_fx/src/features/home/domain/models/exchange_rates/exchange_rates.dart';
+import 'package:local_fx/src/features/home/domain/models/exchange_rates.dart';
 
 abstract class ForexService {
   Future<ExchangeRates?> getLatestRates({required String base});

@@ -2,7 +2,7 @@ import 'package:local_fx/src/config/config.dart';
 import 'package:local_fx/src/features/common/domain/constants.dart';
 import 'package:local_fx/src/features/common/domain/models/exception/app_exception.dart';
 import 'package:local_fx/src/features/common/infrastructure/network_client.dart';
-import 'package:local_fx/src/features/home/domain/models/exchange_rates/exchange_rates.dart';
+import 'package:local_fx/src/features/home/domain/models/exchange_rates.dart';
 import 'package:local_fx/src/features/home/domain/services/forex_service.dart';
 
 class CurrencyBeaconService extends ForexService {

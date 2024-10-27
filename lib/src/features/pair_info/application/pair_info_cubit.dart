@@ -28,9 +28,21 @@ class PairInfoCubit extends Cubit<PairInfoState> {
         symbol: state.pair,
       );
 
-      emit(state.copyWith(quote: quote, loadingQuote: false));
-    } catch (_) {
-      emit(state.copyWith(loadingQuote: false));
+      emit(
+        state.copyWith(
+          quote: quote,
+          loadingQuote: false,
+        ),
+      );
+    } catch (e) {
+      // TODO(Morpheus): Only fetch available pairs if error is NotFound
+      try {
+        final availablePairs = await _twelveDataService.getAvailableForexPairs(
+          base: state.base,
+        );
+        emit(state.copyWith(availablePairs: availablePairs));
+      } catch (_) {}
+      emit(state.copyWith(loadingQuote: false, failedDataFetch: true));
     }
   }
 

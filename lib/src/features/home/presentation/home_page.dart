@@ -5,7 +5,7 @@ import 'package:local_fx/src/features/common/application/app/app_bloc.dart';
 import 'package:local_fx/src/features/common/presentation/bloc_presentation/bloc_presentation_listener.dart';
 import 'package:local_fx/src/features/common/presentation/styles.dart';
 import 'package:local_fx/src/features/home/application/home_cubit.dart';
-import 'package:local_fx/src/features/home/domain/models/exchange_rates/exchange_rates.dart';
+import 'package:local_fx/src/features/home/domain/models/exchange_rates.dart';
 import 'package:local_fx/src/features/home/presentation/widgets/country_selection/country_selection.dart';
 import 'package:local_fx/src/features/home/presentation/widgets/country_selection/country_selection_dialog.dart';
 import 'package:local_fx/src/features/home/presentation/widgets/currency_pair_tile.dart';
@@ -29,6 +29,7 @@ class _HomePageState extends State<HomePage> {
       listener: (context, event) {
         return switch (event) {
           LocaleFetchError(:final error) => onLocaleError(error),
+          PermissionsError(:final error) => showError(error),
         };
       },
       child: Scaffold(
@@ -44,6 +45,7 @@ class _HomePageState extends State<HomePage> {
                   return BlocBuilder<AppBloc, AppState>(
                     builder: (_, appState) {
                       return CountrySelection(
+                        enabled: !state.loadingRates,
                         key: ValueKey(state.country.isoCode),
                         languageCode: appState.language.code,
                         initialCountryCode: state.country.isoCode,
@@ -69,6 +71,22 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
               actions: <Widget>[
+                BlocBuilder<HomeCubit, HomeState>(
+                  builder: (ctx, state) => state.hasLocationPermission
+                      ? const SizedBox.shrink()
+                      : IconButton(
+                          tooltip: 'Location permission',
+                          icon: const Icon(
+                            Icons.add_location_alt_outlined,
+                            size: 22,
+                          ),
+                          onPressed: () {
+                            ctx
+                                .read<HomeCubit>()
+                                .handlePermission(silent: false);
+                          },
+                        ),
+                ),
                 IconButton(
                   tooltip: 'Information',
                   icon: const Icon(Icons.info_outline_rounded, size: 22),
@@ -117,6 +135,11 @@ class _HomePageState extends State<HomePage> {
       error,
       autoCloseDuration: const Duration(seconds: 5),
     );
+  }
+
+  void showError(String error) {
+    final fToast = ToastUtils.of(context);
+    ToastUtils.showErrorToast(fToast, error);
   }
 
   Future<void> _showInfoDialog() async {

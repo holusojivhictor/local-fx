@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:local_fx/src/extensions/iterable_extensions.dart';
 import 'package:local_fx/src/features/common/presentation/styles.dart';
-import 'package:local_fx/src/features/home/domain/models/exchange_rates/exchange_rates.dart';
+import 'package:local_fx/src/features/home/domain/models/exchange_rates.dart';
 import 'package:local_fx/src/features/home/presentation/widgets/currency_pair_tile.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 

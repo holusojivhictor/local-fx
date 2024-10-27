@@ -46,7 +46,7 @@ class Styles {
   }) {
     return InputDecoration(
       filled: true,
-      fillColor: AppColors.grey1,
+      fillColor: context.colorScheme.onInverseSurface,
       border: formFieldBorder,
       enabledBorder: formFieldBorder,
       focusedBorder:

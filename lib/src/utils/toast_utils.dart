@@ -100,7 +100,7 @@ class ToastUtils {
     Duration? autoCloseDuration,
   }) {
     Color bgColor;
-    Icon icon;
+    Icon? icon;
     switch (type) {
       case ToastType.info:
         bgColor = Colors.blue;
@@ -113,7 +113,6 @@ class ToastUtils {
         icon = const Icon(Icons.warning, color: Colors.white);
       case ToastType.error:
         bgColor = Colors.red;
-        icon = const Icon(Icons.dangerous, color: Colors.white);
     }
 
     final widget = buildToast(

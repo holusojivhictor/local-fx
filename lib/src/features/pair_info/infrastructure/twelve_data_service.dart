@@ -22,7 +22,13 @@ class TwelveDataService {
         path: 'quote',
         queryParameters: {'symbol': symbol}..addAll(accessKey),
       ),
-      transform: Quote.fromJson,
+      transform: (data) {
+        if (data['status'] != null && data['code'] == 404) {
+          throw NotFound(data['message'] as String? ?? 'Not found');
+        }
+
+        return Quote.fromJson(data);
+      },
       onError: _rethrowAppError,
     );
 
@@ -46,8 +52,35 @@ class TwelveDataService {
         }..addAll(accessKey),
       ),
       transform: (data) {
+        if (data['status'] != null && data['code'] == 404) {
+          throw NotFound(data['message'] as String? ?? 'Not found');
+        }
+
         return (data['values'] as List<dynamic>)
             .map((e) => Candlestick.fromJson(e as Map<String, dynamic>))
+            .toList();
+      },
+      onError: _rethrowAppError,
+    );
+
+    return result ?? [];
+  }
+
+  Future<List<SymbolPair>> getAvailableForexPairs({
+    required String base,
+  }) async {
+    final result = await _client.get<JsonMap, List<SymbolPair>>(
+      Uri(
+        scheme: 'https',
+        host: Constants.twelveDataHost,
+        path: 'forex_pairs',
+        queryParameters: {
+          'currency_base': base,
+        }..addAll(accessKey),
+      ),
+      transform: (data) {
+        return (data['data'] as List<dynamic>)
+            .map((e) => SymbolPair.fromJson(e as Map<String, dynamic>))
             .toList();
       },
       onError: _rethrowAppError,
