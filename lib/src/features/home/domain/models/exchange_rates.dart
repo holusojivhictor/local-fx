@@ -7,10 +7,16 @@ class ExchangeRates extends Equatable {
     required this.rates,
   });
 
-  ExchangeRates.fromFastForex(Map<String, dynamic> json)
-      : base = json['base'] as String,
-        date = DateTime.parse(json['updated'] as String),
-        rates = Map<String, num>.from(json['results'] as Map);
+  factory ExchangeRates.fromFastForex(Map<String, dynamic> json) {
+    final updated = json['updated'] as String?;
+    final date = json['date'] as String?;
+
+    return ExchangeRates(
+      base: json['base'] as String,
+      date: DateTime.parse(updated ?? date!),
+      rates: Map<String, num>.from(json['results'] as Map),
+    );
+  }
 
   ExchangeRates.fromCurrencyBeacon(Map<String, dynamic> json)
       : base = json['base'] as String,

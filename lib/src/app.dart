@@ -31,13 +31,7 @@ class LocalFXApp extends StatelessWidget {
         BlocProvider(
           create: (ctx) {
             final localFXService = getIt<LocalFXService>();
-            final fastForexService = getIt<FastForexService>();
-            final currencyBeaconService = getIt<CurrencyBeaconService>();
-            return HomeCubit(
-              localFXService,
-              fastForexService,
-              currencyBeaconService,
-            )..init();
+            return HomeCubit(localFXService)..init();
           },
         ),
         BlocProvider(

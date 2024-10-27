@@ -11,15 +11,9 @@ part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState>
     with BlocPresentationMixin<HomeState, HomeCubitEvent> {
-  HomeCubit(
-    this._fxService,
-    this._fastForexService,
-    this._currencyBeaconService,
-  ) : super(HomeState.init());
+  HomeCubit(this._fxService) : super(HomeState.init());
 
   final LocalFXService _fxService;
-  final FastForexService _fastForexService;
-  final CurrencyBeaconService _currencyBeaconService;
 
   Future<void> init() async {
     try {
@@ -67,31 +61,13 @@ class HomeCubit extends Cubit<HomeState>
     final currencyCode = country?.currencyCode ?? state.country.currencyCode;
 
     try {
-      final pairs = await _fastForexService.getLatestRatesWithChanges(
-        base: currencyCode,
-      );
-
+      final pairs = await _fxService.getPairsFromCurrencyCode(currencyCode);
       emit(state.copyWith(currencyPairs: pairs, loadingRates: false));
-    } catch (_) {
-      try {
-        final pairs = await _currencyBeaconService.getLatestRatesWithChanges(
-          base: currencyCode,
-        );
-        emit(state.copyWith(currencyPairs: pairs, loadingRates: false));
-      } catch (_) {
-        final fallbackCode = fallbackCountry.currencyCode;
-        if (currencyCode != fallbackCode) {
-          emitPresentation(
-            LocaleFetchError(
-              'Could not get rates for $currencyCode. Loading rates for ${fallbackCountry.isoCode}($fallbackCode) as fallback',
-            ),
-          );
+    } catch (e) {
+      final error = e as AppException;
+      emitPresentation(LocaleFetchError(AppException.getErrorMessage(error)));
 
-          await refreshLocalRates(country: fallbackCountry);
-        }
-
-        emit(state.copyWith(loadingRates: false));
-      }
+      return refreshLocalRates(country: fallbackCountry);
     }
   }
 }
