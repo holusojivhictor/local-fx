@@ -18,27 +18,8 @@ class NetworkClient {
     Uri uri, {
     required TResult Function(TParsed e) transform,
     void Function(AppException e)? onError,
-    VoidCallback? onBegin,
-    VoidCallback? onEnd,
-  }) async {
-    return performFetch(
-      RequestOptions(
-        path: uri.path,
-        method: 'GET',
-        baseUrl: uri.origin,
-        queryParameters: uri.queryParameters,
-      ),
-      transform: transform,
-      onError: onError,
-      onBegin: onBegin,
-      onEnd: onEnd,
-    );
-  }
-
-  Future<TResult?> performFetch<TParsed, TResult>(
-    RequestOptions requestOptions, {
-    required TResult Function(TParsed e) transform,
-    void Function(AppException e)? onError,
+    Object? data,
+    Options? options,
     VoidCallback? onBegin,
     VoidCallback? onEnd,
   }) async {
@@ -52,7 +33,7 @@ class NetworkClient {
 
     onBegin?.call();
     try {
-      final result = await _dio.fetch<dynamic>(requestOptions);
+      final result = await _dio.getUri<dynamic>(uri, options: options);
       onEnd?.call();
       final parsed = result.data as TParsed;
       if (parsed == null) return null;
