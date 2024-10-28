@@ -4,7 +4,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:http_mock_adapter/http_mock_adapter.dart';
 import 'package:local_fx/src/extensions/date_time_extensions.dart';
-import 'package:local_fx/src/features/common/domain/models/country/country.dart';
 import 'package:local_fx/src/features/common/domain/models/exception/app_exception.dart';
 import 'package:local_fx/src/features/common/infrastructure/network_client.dart';
 import 'package:local_fx/src/features/home/infrastructure/infrastructure.dart';
@@ -208,35 +207,3 @@ void main() {
     });
   });
 }
-
-const mockCountry = Country(
-  name: 'Netherlands',
-  isoCode: 'NL',
-  iso3Code: 'NLD',
-  currencyCode: 'EUR',
-  currencyName: 'Euro',
-  nameTranslations: {
-    'sk': 'Holandsko',
-    'se': 'Vuolleeatnamat',
-    'pl': 'Holandia',
-    'no': 'Nederland',
-    'ja': 'オランダ',
-    'it': 'Paesi Bassi',
-    'zh': '荷兰',
-    'nl': 'Nederland',
-    'de': 'Niederlande',
-    'fr': 'Pays-Bas',
-    'es': 'Países Bajos',
-    'en': 'Netherlands',
-    'pt_BR': 'Países Baixos',
-    'sr-Cyrl': 'Холандија',
-    'sr-Latn': 'Holandija',
-    'zh_TW': '荷蘭',
-    'tr': 'Hollanda',
-    'ro': 'Olanda',
-    'ar': 'هولندا',
-    'fa': 'هلند',
-    'yue': '荷蘭',
-  },
-  flag: '🇳🇱',
-);
