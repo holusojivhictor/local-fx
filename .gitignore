@@ -1,9 +1,3 @@
-#Secrets
-.env
-
-# Generated
-*.g.dart
-
 # Miscellaneous
 *.class
 *.log

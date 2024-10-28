@@ -69,13 +69,13 @@ void main() {
     act: (bloc) => bloc
       ..add(PreferenceInitialize())
       ..add(PreferenceThemeChanged(newValue: AppThemeType.dark))
-      ..add(PreferenceLanguageChanged(newValue: AppLanguageType.english))
+      ..add(PreferenceLanguageChanged(newValue: AppLanguageType.spanish))
       ..add(PreferenceAutoThemeModeChanged(newValue: AutoThemeModeType.on)),
-    skip: 2,
+    skip: 3,
     expect: () => <PreferenceState>[
       const PreferenceState(
         currentTheme: AppThemeType.dark,
-        currentLanguage: AppLanguageType.english,
+        currentLanguage: AppLanguageType.spanish,
         themeMode: AutoThemeModeType.on,
         appVersion: appVersion,
       ),

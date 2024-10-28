@@ -1,4 +1,4 @@
-package com.morpheus.local_fx
+package com.morpheus.local.fx
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -2,8 +2,11 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/foundation.dart' as foundation;
 import 'package:flutter/material.dart';
+import 'package:local_fx/src/config/config.dart';
 import 'package:local_fx/src/config/injection.dart';
 import 'package:local_fx/src/extensions/string_extensions.dart';
 import 'package:local_fx/src/features/common/presentation/colors.dart';
@@ -24,10 +27,28 @@ class AppBlocObserver extends BlocObserver {
   }
 }
 
-Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
+Future<void> bootstrap(
+  FutureOr<Widget> Function() builder, {
+  FirebaseOptions? options,
+}) async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await AssetUtils.preloadSvgs();
+
+  await Firebase.initializeApp(
+    options: options,
+  );
+
+  final remoteConfig = FirebaseRemoteConfig.instance;
+  await remoteConfig.setConfigSettings(
+    RemoteConfigSettings(
+      fetchTimeout: const Duration(minutes: 1),
+      minimumFetchInterval: const Duration(days: 1),
+    ),
+  );
+
+  await remoteConfig.fetchAndActivate();
+  Config.instance.initConfig(remoteConfig.getAll());
 
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);

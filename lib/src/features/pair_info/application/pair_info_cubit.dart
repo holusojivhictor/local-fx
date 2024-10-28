@@ -15,6 +15,13 @@ class PairInfoCubit extends Cubit<PairInfoState> {
 
   final TwelveDataService _twelveDataService;
 
+  @override
+  void emit(PairInfoState state) {
+    if (!isClosed) {
+      super.emit(state);
+    }
+  }
+
   void init() {
     fetchQuoteForSymbol();
     fetchTimeSeriesDataForSymbol();
@@ -35,7 +42,6 @@ class PairInfoCubit extends Cubit<PairInfoState> {
         ),
       );
     } catch (e) {
-      // TODO(Morpheus): Only fetch available pairs if error is NotFound
       try {
         final availablePairs = await _twelveDataService.getAvailableForexPairs(
           base: state.base,

@@ -3,7 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:local_fx/src/features/home/application/home_cubit.dart';
+import 'package:local_fx/src/features/home/domain/models/exchange_rates.dart';
 import 'package:local_fx/src/features/home/infrastructure/infrastructure.dart';
+import 'package:mockito/mockito.dart';
 
 import '../../common.dart';
 import '../../helpers.dart';
@@ -11,6 +13,7 @@ import '../../mocks.mocks.dart';
 
 void main() {
   const geolocatorChannel = MethodChannel('flutter.baseflow.com/geolocator');
+  const base = 'EUR';
 
   late FastForexService fastForexService;
   late CurrencyBeaconService currencyBeaconService;
@@ -37,6 +40,8 @@ void main() {
     GeocodingPlatform.instance = MockGeocodingPlatform();
 
     fastForexService = MockFastForexService();
+    when(fastForexService.getLatestRatesWithChanges(base: base))
+        .thenAnswer((_) async => pairs);
     currencyBeaconService = MockCurrencyBeaconService();
     localFXService = LocalFXService(fastForexService, currencyBeaconService);
   });
@@ -49,16 +54,27 @@ void main() {
     'emits initialized state',
     build: () => HomeCubit(localFXService),
     act: (cubit) => cubit.init(),
-    skip: 2,
+    skip: 3,
     expect: () {
       return <HomeState>[
-        const HomeState(
+        HomeState(
           country: mockCountry,
-          currencyPairs: [],
+          currencyPairs: pairs,
           hasLocationPermission: true,
-          loadingRates: true,
+          loadingRates: false,
         ),
       ];
     },
   );
 }
+
+final pairs = <Pair>[
+  Pair(
+    base: 'AUD',
+    quote: 'HUF',
+    rate: 228.633442,
+    absolute: 1.3345,
+    change: 0.11,
+    date: DateTime.now(),
+  ),
+];

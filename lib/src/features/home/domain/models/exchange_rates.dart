@@ -27,14 +27,6 @@ class ExchangeRates extends Equatable {
   final DateTime date;
   final Map<String, num> rates;
 
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'base': base,
-      'date': date,
-      'rates': rates,
-    };
-  }
-
   @override
   List<Object?> get props => <Object?>[base, date, rates];
 }
@@ -63,17 +55,6 @@ class Pair extends Equatable {
   final num absolute;
   final double change;
   final DateTime date;
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'base': base,
-      'pair': quote,
-      'rate': rate,
-      'absolute': absolute,
-      'change': change,
-      'date': date.toIso8601String(),
-    };
-  }
 
   String get pair => '$base$quote';
 

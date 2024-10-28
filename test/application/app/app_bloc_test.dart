@@ -7,6 +7,7 @@ import 'package:local_fx/src/features/common/domain/models/models.dart';
 import 'package:local_fx/src/features/common/infrastructure/locale_service.dart';
 import 'package:mockito/mockito.dart';
 
+import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
@@ -38,7 +39,7 @@ void main() {
         .thenReturn(preferences.isFirstInstall);
     when(preferenceService.preferences).thenReturn(preferences);
 
-    final localeService = LocaleService(preferenceService);
+    final localeService = getLocaleService(preferences.appLanguage);
     final deviceInfoService = MockDeviceInfoService();
     when(deviceInfoService.appName).thenReturn(appName);
     when(deviceInfoService.versionChanged).thenReturn(versionChanged);

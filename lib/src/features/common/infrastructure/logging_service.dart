@@ -3,7 +3,11 @@ import 'package:logger/logger.dart';
 import 'package:sprintf/sprintf.dart';
 
 class LoggingService {
-  final _logger = Logger();
+  LoggingService({
+    Logger? logger,
+  }) : _logger = logger ?? Logger();
+
+  final Logger _logger;
 
   static final now = DateTime.now();
 

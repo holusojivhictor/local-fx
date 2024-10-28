@@ -19,18 +19,6 @@ class Country extends Equatable {
   final String flag;
   final Map<String, String> nameTranslations;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'name': name,
-      'isoCode': isoCode,
-      'iso3Code': iso3Code,
-      'currencyCode': currencyCode,
-      'currencyName': currencyName,
-      'flag': flag,
-      'nameTranslations': nameTranslations,
-    };
-  }
-
   String localizedName(String languageCode) {
     return nameTranslations[languageCode] ?? name;
   }

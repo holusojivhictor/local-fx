@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "707072693623",
+    "project_id": "local-fx",
+    "storage_bucket": "local-fx.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707072693623:android:f3bba92b5d9f31c7f53d72",
+        "android_client_info": {
+          "package_name": "com.morpheus.local.fx.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeHc5Y9CXiy8z2EOry870riOxRqjkABR8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
