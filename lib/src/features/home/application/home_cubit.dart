@@ -15,10 +15,10 @@ class HomeCubit extends Cubit<HomeState>
 
   final LocalFXService _fxService;
 
-  Future<void> init() async {
+  Future<void> init({bool silent = true}) async {
     try {
       emit(state.copyWith(loadingRates: true));
-      await handlePermission();
+      await handlePermission(silent: silent);
 
       final isoCountryCode = await _fxService.getIsoCountryCodeFromPosition();
       if (isoCountryCode == null) return;

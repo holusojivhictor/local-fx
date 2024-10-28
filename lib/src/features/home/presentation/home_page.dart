@@ -81,9 +81,7 @@ class _HomePageState extends State<HomePage> {
                             size: 22,
                           ),
                           onPressed: () {
-                            ctx
-                                .read<HomeCubit>()
-                                .handlePermission(silent: false);
+                            ctx.read<HomeCubit>().init(silent: false);
                           },
                         ),
                 ),

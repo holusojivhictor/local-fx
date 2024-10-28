@@ -12,6 +12,7 @@ class PriceChart extends StatelessWidget {
   Widget build(BuildContext context) {
     final values =
         candlesticks.expand((e) => [e.low, e.close, e.open, e.high]).toList();
+    final onSurface = Theme.of(context).colorScheme.onSurface;
 
     return SizedBox(
       height: 500,
@@ -56,8 +57,8 @@ class PriceChart extends StatelessWidget {
           showLabel: [true, true],
           followPointer: [false, false],
           styles: [
-            PaintStyle(strokeColor: Colors.black),
-            PaintStyle(strokeColor: Colors.black),
+            PaintStyle(strokeColor: onSurface),
+            PaintStyle(strokeColor: onSurface),
           ],
         ),
       ),

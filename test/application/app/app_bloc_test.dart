@@ -4,7 +4,6 @@ import 'package:local_fx/src/features/common/application/app/app_bloc.dart';
 import 'package:local_fx/src/features/common/domain/constants.dart';
 import 'package:local_fx/src/features/common/domain/enums/enums.dart';
 import 'package:local_fx/src/features/common/domain/models/models.dart';
-import 'package:local_fx/src/features/common/infrastructure/locale_service.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../common.dart';

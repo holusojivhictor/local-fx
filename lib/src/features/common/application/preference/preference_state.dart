@@ -10,7 +10,7 @@ class PreferenceState extends Equatable {
 
   const PreferenceState.init()
       : themeMode = AutoThemeModeType.off,
-        currentTheme = AppThemeType.dark,
+        currentTheme = AppThemeType.light,
         currentLanguage = AppLanguageType.english,
         appVersion = '1.0';
 
