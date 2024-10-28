@@ -14,6 +14,11 @@ class PreferenceState extends Equatable {
         currentLanguage = AppLanguageType.english,
         appVersion = '1.0';
 
+  final AutoThemeModeType themeMode;
+  final AppThemeType currentTheme;
+  final AppLanguageType currentLanguage;
+  final String appVersion;
+
   PreferenceState copyWith({
     AutoThemeModeType? themeMode,
     AppThemeType? currentTheme,
@@ -27,11 +32,6 @@ class PreferenceState extends Equatable {
       appVersion: appVersion ?? this.appVersion,
     );
   }
-
-  final AutoThemeModeType themeMode;
-  final AppThemeType currentTheme;
-  final AppLanguageType currentLanguage;
-  final String appVersion;
 
   @override
   List<Object?> get props => [

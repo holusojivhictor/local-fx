@@ -50,7 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "None found. Please switch to a different currency."),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "open": MessageLookupByLibrary.simpleMessage("Open"),
-        "searchCountry": MessageLookupByLibrary.simpleMessage("Search Country"),
+        "searchCountry":
+            MessageLookupByLibrary.simpleMessage("Search country or currency"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "syncWithDeviceTheme":
             MessageLookupByLibrary.simpleMessage("Sync with device theme"),

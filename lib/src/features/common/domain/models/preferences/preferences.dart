@@ -14,6 +14,20 @@ class Preferences extends Equatable {
   final bool isFirstInstall;
   final AutoThemeModeType themeMode;
 
+  Preferences copyWith({
+    AppThemeType? appTheme,
+    AppLanguageType? appLanguage,
+    bool? isFirstInstall,
+    AutoThemeModeType? themeMode,
+  }) {
+    return Preferences(
+      appTheme: appTheme ?? this.appTheme,
+      appLanguage: appLanguage ?? this.appLanguage,
+      isFirstInstall: isFirstInstall ?? this.isFirstInstall,
+      themeMode: themeMode ?? this.themeMode,
+    );
+  }
+
   @override
   List<Object?> get props => [
     appTheme,

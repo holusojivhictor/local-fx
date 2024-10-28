@@ -14,6 +14,12 @@ import 'package:local_fx/src/features/common/infrastructure/logging_service.dart
     as _i6;
 import 'package:local_fx/src/features/common/infrastructure/preference_service.dart'
     as _i7;
+import 'package:local_fx/src/features/home/domain/models/exchange_rates.dart'
+    as _i10;
+import 'package:local_fx/src/features/home/infrastructure/currency_beacon_service.dart'
+    as _i11;
+import 'package:local_fx/src/features/home/infrastructure/fast_forex_service.dart'
+    as _i9;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i4;
 
@@ -262,4 +268,103 @@ class MockPreferenceService extends _i1.Mock implements _i7.PreferenceService {
         ),
         returnValue: _i5.Future<bool>.value(false),
       ) as _i5.Future<bool>);
+}
+
+/// A class which mocks [FastForexService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockFastForexService extends _i1.Mock implements _i9.FastForexService {
+  MockFastForexService() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i5.Future<_i10.ExchangeRates?> getLatestRates({required String? base}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getLatestRates,
+          [],
+          {#base: base},
+        ),
+        returnValue: _i5.Future<_i10.ExchangeRates?>.value(),
+      ) as _i5.Future<_i10.ExchangeRates?>);
+
+  @override
+  _i5.Future<_i10.ExchangeRates?> getHistoricalRates({
+    required String? date,
+    required String? base,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getHistoricalRates,
+          [],
+          {
+            #date: date,
+            #base: base,
+          },
+        ),
+        returnValue: _i5.Future<_i10.ExchangeRates?>.value(),
+      ) as _i5.Future<_i10.ExchangeRates?>);
+
+  @override
+  _i5.Future<List<_i10.Pair>> getLatestRatesWithChanges(
+          {required String? base}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getLatestRatesWithChanges,
+          [],
+          {#base: base},
+        ),
+        returnValue: _i5.Future<List<_i10.Pair>>.value(<_i10.Pair>[]),
+      ) as _i5.Future<List<_i10.Pair>>);
+}
+
+/// A class which mocks [CurrencyBeaconService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockCurrencyBeaconService extends _i1.Mock
+    implements _i11.CurrencyBeaconService {
+  MockCurrencyBeaconService() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i5.Future<_i10.ExchangeRates?> getLatestRates({required String? base}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getLatestRates,
+          [],
+          {#base: base},
+        ),
+        returnValue: _i5.Future<_i10.ExchangeRates?>.value(),
+      ) as _i5.Future<_i10.ExchangeRates?>);
+
+  @override
+  _i5.Future<_i10.ExchangeRates?> getHistoricalRates({
+    required String? date,
+    required String? base,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getHistoricalRates,
+          [],
+          {
+            #date: date,
+            #base: base,
+          },
+        ),
+        returnValue: _i5.Future<_i10.ExchangeRates?>.value(),
+      ) as _i5.Future<_i10.ExchangeRates?>);
+
+  @override
+  _i5.Future<List<_i10.Pair>> getLatestRatesWithChanges(
+          {required String? base}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getLatestRatesWithChanges,
+          [],
+          {#base: base},
+        ),
+        returnValue: _i5.Future<List<_i10.Pair>>.value(<_i10.Pair>[]),
+      ) as _i5.Future<List<_i10.Pair>>);
 }

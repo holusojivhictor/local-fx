@@ -48,7 +48,7 @@ class LocalFXService {
   }
 
   Future<String?> getIsoCountryCodeFromPosition() async {
-    final position = await _getPosition();
+    final position = await getPosition();
     if (position == null) return null;
 
     try {
@@ -65,7 +65,7 @@ class LocalFXService {
     return null;
   }
 
-  Future<Position?> _getPosition() async {
+  Future<Position?> getPosition() async {
     Position? position;
     try {
       position = await Geolocator.getCurrentPosition(

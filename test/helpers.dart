@@ -1,5 +1,25 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/widgets.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:http_mock_adapter/http_mock_adapter.dart';
+import 'package:mocktail/mocktail.dart';
+import 'package:plugin_platform_interface/plugin_platform_interface.dart';
+
+import 'common.dart';
+
+class _FakeBuildContext extends Fake implements BuildContext {}
+
+class MockGeocodingPlatform extends Mock
+    with MockPlatformInterfaceMixin
+    implements GeocodingPlatform {
+  @override
+  Future<List<Placemark>> placemarkFromCoordinates(
+    double latitude,
+    double longitude,
+  ) async {
+    return [mockPlacemark];
+  }
+}
 
 class CustomRequestMatcher implements HttpRequestMatcher {
   const CustomRequestMatcher({this.matchMethod = false});
@@ -42,4 +62,8 @@ bool doesRouteMatch(dynamic actual, dynamic expected) {
 
   // Default to no match.
   return false;
+}
+
+void registerFakes() {
+  registerFallbackValue(_FakeBuildContext());
 }

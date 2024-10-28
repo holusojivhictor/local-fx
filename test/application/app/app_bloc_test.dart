@@ -1,11 +1,12 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:local_fx/src/features/common/application/app/app_bloc.dart';
+import 'package:local_fx/src/features/common/domain/constants.dart';
 import 'package:local_fx/src/features/common/domain/enums/enums.dart';
 import 'package:local_fx/src/features/common/domain/models/models.dart';
+import 'package:local_fx/src/features/common/infrastructure/locale_service.dart';
 import 'package:mockito/mockito.dart';
 
-import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
@@ -37,7 +38,7 @@ void main() {
         .thenReturn(preferences.isFirstInstall);
     when(preferenceService.preferences).thenReturn(preferences);
 
-    final localeService = getLocaleService(AppLanguageType.english);
+    final localeService = LocaleService(preferenceService);
     final deviceInfoService = MockDeviceInfoService();
     when(deviceInfoService.appName).thenReturn(appName);
     when(deviceInfoService.versionChanged).thenReturn(versionChanged);
@@ -111,5 +112,31 @@ void main() {
         ),
       ],
     );
+
+    group('Language changed', () {
+      blocTest<AppBloc, AppState>(
+        'updates the language in the state',
+        build: () => getBloc(
+          appPreferences: defaultAppPreferences.copyWith
+              .call(appLanguage: AppLanguageType.spanish),
+        ),
+        act: (bloc) => bloc
+          ..add(AppInitialize())
+          ..add(AppLanguageChanged(newValue: AppLanguageType.spanish)),
+        expect: () => [
+          AppState(
+            appTitle: defaultAppName,
+            theme: defaultAppPreferences.appTheme,
+            language: languagesMap.entries
+                .firstWhere((kvp) => kvp.key == AppLanguageType.spanish)
+                .value,
+            initialized: true,
+            autoThemeMode: defaultThemeMode,
+            firstInstall: defaultAppPreferences.isFirstInstall,
+            versionChanged: false,
+          ),
+        ],
+      );
+    });
   });
 }

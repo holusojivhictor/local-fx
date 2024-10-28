@@ -14,6 +14,7 @@ class Constants {
 /// Languages map
 const languagesMap = {
   AppLanguageType.english: Language('en', 'US'),
+  AppLanguageType.spanish: Language('es', 'ES'),
 };
 
 Country fallbackCountry =   const Country(

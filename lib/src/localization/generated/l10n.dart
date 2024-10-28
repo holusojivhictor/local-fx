@@ -180,16 +180,6 @@ class S {
     );
   }
 
-  /// `Search Country`
-  String get searchCountry {
-    return Intl.message(
-      'Search Country',
-      name: 'searchCountry',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Choose a language`
   String get chooseLanguage {
     return Intl.message(
@@ -205,6 +195,16 @@ class S {
     return Intl.message(
       'are listed below',
       name: 'areListedBelow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search country or currency`
+  String get searchCountry {
+    return Intl.message(
+      'Search country or currency',
+      name: 'searchCountry',
       desc: '',
       args: [],
     );
@@ -317,6 +317,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'es', countryCode: 'ES'),
     ];
   }
 

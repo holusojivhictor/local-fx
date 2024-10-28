@@ -30,73 +30,83 @@ class SettingsPage extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: Styles.edgeInsetAll16,
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                BlocBuilder<PreferenceBloc, PreferenceState>(
-                  builder: (ctx, state) => SettingsListTile(
-                    title: s.syncWithDeviceTheme,
-                    icon: Assets.getSvgPath('ic_show.svg'),
-                    trailing: Transform.scale(
-                      scale: 0.7,
-                      alignment: Alignment.centerRight,
-                      child: Switch.adaptive(
-                        activeColor: theme.colorScheme.onSurface,
-                        value: state.themeMode.system,
-                        onChanged: (v) {
-                          final event = PreferenceAutoThemeModeChanged(
-                            newValue: AutoThemeModeType.translate(
-                              value: v,
-                            ),
-                          );
-                          context.read<PreferenceBloc>().add(event);
-                        },
-                      ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              BlocBuilder<PreferenceBloc, PreferenceState>(
+                builder: (ctx, state) => SettingsListTile(
+                  title: s.syncWithDeviceTheme,
+                  icon: Assets.getSvgPath('ic_show.svg'),
+                  trailing: Transform.scale(
+                    scale: 0.7,
+                    alignment: Alignment.centerRight,
+                    child: Switch.adaptive(
+                      activeColor: theme.colorScheme.onSurface,
+                      value: state.themeMode.system,
+                      onChanged: (v) {
+                        final event = PreferenceAutoThemeModeChanged(
+                          newValue: AutoThemeModeType.translate(
+                            value: v,
+                          ),
+                        );
+                        context.read<PreferenceBloc>().add(event);
+                      },
                     ),
                   ),
                 ),
-                BlocBuilder<PreferenceBloc, PreferenceState>(
-                  builder: (ctx, state) => SettingsListTile(
-                    title: s.darkMode,
-                    icon: Assets.getSvgPath('ic_show.svg'),
-                    trailing: Transform.scale(
-                      scale: 0.7,
-                      alignment: Alignment.centerRight,
-                      child: Switch.adaptive(
-                        activeColor: theme.colorScheme.onSurface,
-                        value: state.currentTheme.darkMode,
-                        onChanged: state.themeMode == AutoThemeModeType.off
-                            ? (v) {
-                                final event = PreferenceThemeChanged(
-                                  newValue: AppThemeType.translate(value: v),
-                                );
-                                context.read<PreferenceBloc>().add(event);
-                              }
-                            : null,
-                      ),
+              ),
+              BlocBuilder<PreferenceBloc, PreferenceState>(
+                builder: (ctx, state) => SettingsListTile(
+                  title: s.darkMode,
+                  icon: Assets.getSvgPath('ic_show.svg'),
+                  trailing: Transform.scale(
+                    scale: 0.7,
+                    alignment: Alignment.centerRight,
+                    child: Switch.adaptive(
+                      activeColor: theme.colorScheme.onSurface,
+                      value: state.currentTheme.darkMode,
+                      onChanged: state.themeMode == AutoThemeModeType.off
+                          ? (v) {
+                              final event = PreferenceThemeChanged(
+                                newValue: AppThemeType.translate(value: v),
+                              );
+                              context.read<PreferenceBloc>().add(event);
+                            }
+                          : null,
                     ),
                   ),
                 ),
-                BlocBuilder<PreferenceBloc, PreferenceState>(
-                  builder: (ctx, state) =>
-                      CustomDropdownButton<AppLanguageType>(
-                    hint: s.chooseLanguage,
-                    currentValue: state.currentLanguage,
-                    values:
-                        EnumUtils.getTranslatedAndSortedEnum<AppLanguageType>(
-                      AppLanguageType.values,
-                      (val, _) => val.translate,
+              ),
+              BlocBuilder<PreferenceBloc, PreferenceState>(
+                builder: (ctx, state) => CustomDropdownButton<AppLanguageType>(
+                  hint: s.chooseLanguage,
+                  currentValue: state.currentLanguage,
+                  values: EnumUtils.getTranslatedAndSortedEnum<AppLanguageType>(
+                    AppLanguageType.values,
+                    (val, _) => val.translate,
+                  ),
+                  onChanged: (newValue, _) {
+                    context
+                        .read<PreferenceBloc>()
+                        .add(PreferenceLanguageChanged(newValue: newValue));
+                  },
+                ),
+              ),
+              const Spacer(),
+              BlocBuilder<PreferenceBloc, PreferenceState>(
+                builder: (ctx, state) => Center(
+                  child: Text.rich(
+                    TextSpan(
+                      children: <TextSpan>[
+                        const TextSpan(text: 'v '),
+                        TextSpan(text: state.appVersion),
+                      ],
                     ),
-                    onChanged: (newValue, _) {
-                      context
-                          .read<PreferenceBloc>()
-                          .add(PreferenceLanguageChanged(newValue: newValue));
-                    },
+                    style: theme.textTheme.bodyMedium,
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
